@@ -1,6 +1,6 @@
 /**
  * @license
- * SPDX-License-Identifier: Apache-2.0
+ * SPDX-License-Identifier: MIT
  */
 
 import React, { useState, useEffect, useRef } from 'react';
@@ -35,14 +35,14 @@ import { SCENARIO_TICKETS } from './data/scenarios';
 import {
   evaluateFreeTextResponse,
   evaluateTacticalOption,
-  getGradeLabel
+  getGradeLabel,
+  summarizeTurns
 } from './utils/evaluationEngine';
 import { SimulatedUserScreen } from './components/SimulatedUserScreen';
 import { KnowledgeBaseView } from './components/KnowledgeBaseView';
 import { EvaluationReportView } from './components/EvaluationReportView';
-import { GitHubReadmeView } from './components/GitHubReadmeView';
 
-type ActiveSection = 'simulator' | 'manual' | 'evaluation' | 'github';
+type ActiveSection = 'simulator' | 'manual' | 'evaluation';
 
 const STORAGE_KEY_RECORDS = 'ufes_helpdesk_completed_records_v1';
 const STORAGE_KEY_STUDENT = 'ufes_helpdesk_student_name_v1';
@@ -61,13 +61,14 @@ export default function App() {
   const [sessionTurns, setSessionTurns] = useState<TurnEvaluation[]>([]);
   const [responseMode, setResponseMode] = useState<'free' | 'tactical'>('free');
   const [freeTextInput, setFreeTextInput] = useState<string>('');
-  const [showStageHint, setShowStageHint] = useState<boolean>(true);
+  const [showStageHint, setShowStageHint] = useState<boolean>(false);
 
   // Persistent student evaluation records
   const [completedRecords, setCompletedRecords] = useState<CompletedTicketRecord[]>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY_RECORDS);
-      return saved ? JSON.parse(saved) : [];
+      const parsed = saved ? JSON.parse(saved) : [];
+      return Array.isArray(parsed) ? parsed : [];
     } catch {
       return [];
     }
@@ -148,18 +149,8 @@ export default function App() {
     allTurns: TurnEvaluation[],
     finalFrust: number
   ) => {
-    const empathyAvg = Math.round(
-      allTurns.reduce((acc, t) => acc + t.empathyScore, 0) / allTurns.length
-    );
-    const technicalAvg = Math.round(
-      allTurns.reduce((acc, t) => acc + t.technicalScore, 0) / allTurns.length
-    );
-    const clarityAvg = Math.round(
-      allTurns.reduce((acc, t) => acc + t.clarityScore, 0) / allTurns.length
-    );
-    const overallScore = Math.round(
-      empathyAvg * 0.4 + technicalAvg * 0.4 + clarityAvg * 0.2
-    );
+    const { empathyAvg, technicalAvg, clarityAvg, overallScore, attempts, failedAttempts, assistedTurns } =
+      summarizeTurns(allTurns);
 
     const newRecord: CompletedTicketRecord = {
       ticketId: ticket.id,
@@ -167,7 +158,10 @@ export default function App() {
       ticketTitle: ticket.title,
       category: ticket.category,
       userName: ticket.userName,
-      completedAt: new Date().toLocaleTimeString('es-ES', {
+      completedAt: new Date().toLocaleString('es-ES', {
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
         hour: '2-digit',
         minute: '2-digit'
       }),
@@ -176,7 +170,10 @@ export default function App() {
       technicalPrecisionAvg: technicalAvg,
       clarityAvg,
       overallScore,
-      gradeLabel: getGradeLabel(overallScore),
+      gradeLabel: getGradeLabel(overallScore) + (assistedTurns > 0 ? ' · con ayuda' : ''),
+      attempts,
+      failedAttempts,
+      assistedTurns,
       turns: allTurns
     };
 
@@ -218,10 +215,11 @@ export default function App() {
     setCurrentFrustration(evaluation.frustrationAfter);
     setFreeTextInput('');
 
-    if (advancesStage) {
-      const updatedTurns = [...sessionTurns, evaluation];
-      setSessionTurns(updatedTurns);
+    // Todas las intervenciones cuentan en la nota, también las que no avanzan de fase.
+    const updatedTurns = [...sessionTurns, evaluation];
+    setSessionTurns(updatedTurns);
 
+    if (advancesStage) {
       const nextStageNum = currentStageNum + 1;
       if (nextStageNum <= 3) {
         const nextStageObj = activeTicket.stages[nextStageNum - 1];
@@ -310,7 +308,7 @@ export default function App() {
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900">
       {/* Top Bar Contract: 1-row, 3 zones separated by gap-8 */}
       <header className="bg-white border-b border-slate-200 px-4 sm:px-6 py-3.5 sticky top-0 z-30">
-        <div className="max-w-[1440px] mx-auto flex items-center justify-between gap-8">
+        <div className="max-w-[1440px] mx-auto flex items-center justify-between gap-4 sm:gap-8">
           {/* Zone 1: Brand Wordmark with User Logo */}
           <a
             href="https://www.unfantasmaenelsistema.com/"
@@ -320,17 +318,11 @@ export default function App() {
           >
             <img
               src="./assets/aistudio/icono_81a3db5b.png"
-              onError={(e) => {
-                const target = e.currentTarget;
-                if (!target.src.endsWith('/assets/aistudio/icono_81a3db5b.png')) {
-                  target.src = '/assets/aistudio/icono_81a3db5b.png';
-                }
-              }}
               alt="Logo Un Fantasma en el Sistema"
-              referrerPolicy="no-referrer"
               className="w-8 h-8 object-contain shrink-0"
             />
-            <span>Un Fantasma en el Sistema · Helpdesk N1</span>
+            <span className="hidden sm:inline">Un Fantasma en el Sistema · Helpdesk N1</span>
+            <span className="sm:hidden">Helpdesk N1</span>
           </a>
 
           {/* Zone 2: 4 Single-line Navigation Links */}
@@ -368,16 +360,6 @@ export default function App() {
             >
               Evaluación y Rúbrica ({completedRecords.length}/{SCENARIO_TICKETS.length})
             </button>
-            <button
-              onClick={() => setActiveSection('github')}
-              className={`hover:text-slate-900 transition-colors whitespace-nowrap shrink-0 cursor-pointer py-1 ${
-                activeSection === 'github'
-                  ? 'text-slate-900 font-semibold underline decoration-sky-600 decoration-2 underline-offset-8'
-                  : ''
-              }`}
-            >
-              Guía GitHub Pages
-            </button>
           </nav>
 
           {/* Zone 3: 1 Primary Action Link */}
@@ -399,8 +381,7 @@ export default function App() {
           {[
             { id: 'simulator', label: 'Simulador' },
             { id: 'manual', label: 'Manual Ofimática' },
-            { id: 'evaluation', label: `Evaluación (${completedRecords.length})` },
-            { id: 'github', label: 'GitHub Pages' }
+            { id: 'evaluation', label: `Evaluación (${completedRecords.length})` }
           ].map((item) => (
             <button
               key={item.id}
@@ -432,8 +413,6 @@ export default function App() {
           />
         )}
 
-        {activeSection === 'github' && <GitHubReadmeView />}
-
         {activeSection === 'simulator' && (
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 py-6 space-y-6">
             {/* Educational Context Strip */}
@@ -441,14 +420,7 @@ export default function App() {
               <div className="flex items-start sm:items-center gap-4">
                 <img
                   src="./assets/aistudio/icono_81a3db5b.png"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    if (!target.src.endsWith('/assets/aistudio/icono_81a3db5b.png')) {
-                      target.src = '/assets/aistudio/icono_81a3db5b.png';
-                    }
-                  }}
                   alt="Icono Un Fantasma en el Sistema"
-                  referrerPolicy="no-referrer"
                   className="w-12 h-12 object-contain shrink-0 hidden sm:block"
                 />
                 <div className="space-y-1">
@@ -851,7 +823,7 @@ export default function App() {
                         <p className="text-xs text-slate-700">{activeStage.objective}</p>
                       </div>
 
-                      <div className="flex items-center gap-2 shrink-0">
+                      <div className="flex flex-wrap items-center gap-2">
                         <button
                           onClick={() => setShowStageHint((prev) => !prev)}
                           className="px-3 py-1.5 text-xs font-medium text-amber-900 bg-amber-50 hover:bg-amber-100 border border-amber-200 rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer whitespace-nowrap"
@@ -927,7 +899,7 @@ export default function App() {
                               }
                               className="px-3 py-1.5 text-xs font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors cursor-pointer"
                             >
-                              Insertar respuesta modelo para practicar
+                              Cargar respuesta modelo (cuenta como ayuda)
                             </button>
                             <button
                               type="button"
@@ -1005,14 +977,7 @@ export default function App() {
           <div className="flex items-center gap-3">
             <img
               src="./assets/aistudio/icono_81a3db5b.png"
-              onError={(e) => {
-                const target = e.currentTarget;
-                if (!target.src.endsWith('/assets/aistudio/icono_81a3db5b.png')) {
-                  target.src = '/assets/aistudio/icono_81a3db5b.png';
-                }
-              }}
               alt="Logo Un Fantasma en el Sistema"
-              referrerPolicy="no-referrer"
               className="w-7 h-7 object-contain shrink-0"
             />
             <span>
@@ -1022,12 +987,14 @@ export default function App() {
           </div>
 
           <div className="flex items-center gap-4">
-            <button
-              onClick={() => setActiveSection('github')}
-              className="hover:text-slate-900 underline underline-offset-4 cursor-pointer"
+            <a
+              href="https://github.com/unfantasmaenelsistema/Entrenamiento-Helpdesk-Nivel1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-slate-900 underline underline-offset-4"
             >
-              Documentación y README GitHub Pages
-            </button>
+              Código en GitHub (MIT)
+            </a>
             <span aria-hidden="true">·</span>
             <a
               href="https://www.unfantasmaenelsistema.com/"

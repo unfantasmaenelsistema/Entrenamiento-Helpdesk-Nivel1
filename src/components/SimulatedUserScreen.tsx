@@ -58,7 +58,7 @@ export const SimulatedUserScreen: React.FC<SimulatedUserScreenProps> = ({
                 <Mail className="w-4 h-4" />
                 <span>Redacción de Correo Corporativo — Informe Auditoría 2026</span>
               </div>
-              <span className="font-mono text-[11px] opacity-90">Límite SMTP: 25 MB</span>
+              <span className="font-mono text-[11px] opacity-90">Límite del servidor: 25 MB</span>
             </div>
 
             <div className="p-3.5 space-y-2.5">
@@ -100,7 +100,7 @@ export const SimulatedUserScreen: React.FC<SimulatedUserScreenProps> = ({
                 ) : (
                   <div className="text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-1 rounded font-mono text-[11px] flex items-center gap-1.5">
                     <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                    <span>40 clientes externos ocultos en Copia de Carbón Oculta (RGPD OK)</span>
+                    <span>40 clientes externos ocultos en Con Copia Oculta (RGPD OK)</span>
                   </div>
                 )}
               </div>
@@ -152,7 +152,7 @@ export const SimulatedUserScreen: React.FC<SimulatedUserScreenProps> = ({
               <span className="font-mono text-[11px]">
                 {currentStage <= 2
                   ? 'Autoguardado: Desactivado'
-                  : 'Autoguardado: ACTIVADO (Ctrl + G)'}
+                  : 'Autoguardado: ACTIVADO'}
               </span>
             </div>
 
@@ -208,7 +208,7 @@ export const SimulatedUserScreen: React.FC<SimulatedUserScreenProps> = ({
                       <p className="text-[11px] text-emerald-800">
                         {isResolved
                           ? 'Archivo consolidado con Restaurar / Guardar como y Autoguardado activo.'
-                          : 'Barra amarilla superior activa: Pulse [Restaurar] y active Autoguardado (Ctrl + G).'}
+                          : 'Barra amarilla superior activa: Pulse [Restaurar] y guarde con Ctrl + G.'}
                       </p>
                     </div>
                   </div>
@@ -260,7 +260,7 @@ export const SimulatedUserScreen: React.FC<SimulatedUserScreenProps> = ({
                 </div>
                 {currentStage === 1 ? (
                   <div className="p-2 bg-sky-100 border border-sky-200 rounded text-sky-900">
-                    <p className="font-semibold">Fondo de escritorio vacío (Modo Ampliar)</p>
+                    <p className="font-semibold">Fondo de escritorio vacío (modo Extender)</p>
                     <p className="text-[11px] text-sky-800 mt-0.5">
                       Sin iconos ni presentación (aún no se ha pulsado F5).
                     </p>
@@ -328,7 +328,7 @@ export const SimulatedUserScreen: React.FC<SimulatedUserScreenProps> = ({
               {currentStage >= 3 && (
                 <div className="p-2.5 bg-emerald-50 border border-emerald-200 rounded text-emerald-950">
                   <p className="font-semibold">
-                    Albarán recuperado en Bandeja de entrada + Filtro "Tiene archivos adjuntos"
+                    Albarán recuperado en Bandeja de entrada + Filtro "Tiene datos adjuntos"
                   </p>
                   <p className="text-[11px] text-emerald-800 mt-0.5">
                     Remitente marcado como seguro · Barra de estado inferior: Conectado.

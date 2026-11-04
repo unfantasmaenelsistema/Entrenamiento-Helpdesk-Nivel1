@@ -29,7 +29,7 @@ export const KNOWLEDGE_GUIDES: KnowledgeGuide[] = [
       'Subir el archivo pesado (>25 MB) al almacenamiento en la nube corporativo (OneDrive, Google Drive o SharePoint).',
       'Generar un enlace compartido configurando los permisos en modo "Solo lectura / Puede ver" para evitar modificaciones accidentales.',
       'Pegar el enlace en el cuerpo del mensaje e introducir la propia dirección del remitente en el campo "Para".',
-      'Colocar la lista de clientes externos en el campo "CCO" (Copia de Carbón Oculta) para que ningún destinatario vea los correos de los demás.',
+      'Colocar la lista de clientes externos en el campo "CCO" (Con Copia Oculta) para que ningún destinatario vea los correos de los demás.',
       'Tras pulsar Enviar, verificar que la "Bandeja de salida" queda vacía y que el correo figura en "Elementos enviados".'
     ],
     shortcutsAndCommands: [
@@ -56,12 +56,12 @@ export const KNOWLEDGE_GUIDES: KnowledgeGuide[] = [
       'Pulsar F9 (Enviar y recibir todas las carpetas) para forzar la sincronización inmediata.',
       'Si falta un correo concreto de un remitente nuevo, revisar la carpeta "Correo no deseado (Spam)" y la "Papelera".',
       'Hacer clic derecho sobre el mensaje legítimo en Spam y marcar "No es correo no deseado" + "Confiar siempre en el remitente".',
-      'Usar la barra de búsqueda superior activando el filtro "Tiene archivos adjuntos" (icono del clip) o buscando por extensión ".pdf".'
+      'Usar la barra de búsqueda superior activando el filtro "Tiene datos adjuntos" (icono del clip) o buscando por extensión ".pdf".'
     ],
     shortcutsAndCommands: [
       { keys: 'F9', action: 'Forzar Enviar y recibir todas las carpetas inmediatamente' },
       { keys: 'Ctrl + E / F3', action: 'Situar el cursor directamente en la barra de búsqueda de correo' },
-      { keys: 'tiene:adjunto / ext:pdf', action: 'Filtro de búsqueda para localizar correos con documentos' }
+      { keys: 'hasattachments:yes / .pdf', action: 'Filtro de búsqueda para localizar correos con documentos' }
     ],
     empathyTip:
       'Cuando un usuario frustrado acusa a Informática ("¡Habéis roto el servidor!"), jamás respondas a la defensiva. Valida su urgencia operativa y guíale suavemente a mirar la esquina inferior derecha de su pantalla.'
@@ -82,7 +82,7 @@ export const KNOWLEDGE_GUIDES: KnowledgeGuide[] = [
       'Si el archivo ya existía previamente: ir a "Archivo > Información > Administrar documento" y seleccionar la versión etiquetada como "(cuando se cerró sin guardar)".',
       'Si era un documento nuevo que nunca llegó a guardarse: ir a "Archivo > Abrir > Recientes" y pulsar al final de la pantalla el botón "Recuperar documentos no guardados".',
       'Una vez abierto el borrador recuperado, pulsar inmediatamente el botón "Restaurar" de la barra superior amarilla o ir a "Archivo > Guardar como".',
-      'Activar el interruptor de "Autoguardado" y verificar en "Archivo > Opciones > Guardar" que "Guardar información de Autorrecuperación" esté en 5 minutos.'
+      'Activar el interruptor de "Autoguardado" (solo funciona con archivos guardados en OneDrive o SharePoint) y verificar en "Archivo > Opciones > Guardar" que "Guardar información de Autorrecuperación" esté en 5 minutos.'
     ],
     shortcutsAndCommands: [
       { keys: 'Ctrl + G (o Ctrl + S)', action: 'Guardar cambios inmediatamente (Ctrl+G en español, Ctrl+S en inglés)' },
@@ -128,16 +128,16 @@ export const KNOWLEDGE_GUIDES: KnowledgeGuide[] = [
     symptom:
       'Al conectar el cable HDMI, el proyector solo muestra el fondo de pantalla de Windows sin iconos, o el usuario teme que el público vea sus notas privadas.',
     rootCause:
-      'Windows está en modo de proyección "Ampliar" (escritorio extendido) sin haber lanzado aún la presentación a pantalla completa.',
+      'Windows está en modo de proyección "Extender" (escritorio extendido) sin haber lanzado aún la presentación a pantalla completa.',
     stepByStepSolution: [
       'Confirmar al usuario que si el proyector muestra el fondo de escritorio, el cable HDMI y la lámpara funcionan correctamente.',
-      'Pulsar la combinación "Windows + P" para comprobar el modo de proyección: elegir "Duplicado" si se quiere ver exactamente lo mismo en ambas pantallas, o mantener "Ampliar" para usar la Vista Moderador.',
+      'Pulsar la combinación "Windows + P" para comprobar el modo de proyección: elegir "Duplicar" si se quiere ver exactamente lo mismo en ambas pantallas, o mantener "Extender" para usar la Vista Moderador.',
       'En el programa de presentaciones, ir a la pestaña "Presentación con diapositivas" y marcar la casilla "Usar vista Moderador".',
       'Pulsar la tecla "F5" para iniciar desde la primera diapositiva, o "Mayús + F5" para arrancar desde la diapositiva actual.',
-      'Si las pantallas aparecen invertidas, pulsar arriba en "Configuración de visualización > Cambiar entre vista Moderador y Presentación".'
+      'Si las pantallas aparecen invertidas, pulsar arriba en "Mostrar configuración > Intercambiar Vista Moderador y Presentación de diapositivas".'
     ],
     shortcutsAndCommands: [
-      { keys: 'Windows + P', action: 'Abrir el panel lateral de modos de proyección (Duplicar / Ampliar)' },
+      { keys: 'Windows + P', action: 'Abrir el panel lateral de modos de proyección (Duplicar / Extender)' },
       { keys: 'F5', action: 'Iniciar presentación desde el principio (diapositiva 1)' },
       { keys: 'Mayús + F5', action: 'Iniciar presentación desde la diapositiva actual' }
     ],

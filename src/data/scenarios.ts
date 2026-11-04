@@ -40,12 +40,12 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
           {
             name: 'Límite de tamaño de adjuntos',
             description: 'Explicar que el correo electrónico limita los archivos adjuntos directos a unos 20-25 MB.',
-            keywords: ['25', 'límite', 'limite', 'peso', 'tamaño', 'megas', 'mb', 'supera', 'pesado', 'grande']
+            keywords: ['25 mb', '20-25 mb', '25 megas', 'límite', 'limite', 'tope', 'tamaño máximo', 'supera', 'demasiado grande', 'pesa demasiado', 'muy pesado', '45 mb']
           },
           {
             name: 'Alternativa de almacenamiento en la nube',
             description: 'Proponer subir el archivo a OneDrive, Google Drive o nube corporativa y compartir el enlace.',
-            keywords: ['nube', 'drive', 'onedrive', 'enlace', 'link', 'compartir', 'subir', 'vínculo', 'vinculo']
+            keywords: ['nube', 'onedrive', 'google drive', 'drive', 'sharepoint', 'enlace', 'vínculo', 'vinculo', 'compartir el archivo', 'subirlo', 'súbalo', 'subalo']
           }
         ],
         modelResponse:
@@ -108,26 +108,26 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
         stageNumber: 2,
         title: 'Privacidad de Destinatarios (CCO) y Permisos del Enlace',
         objective:
-          'Guiar a Carmen para mover los 40 clientes del campo "Para" al campo "CCO" (Copia de Carbón Oculta) y configurar el enlace de la nube en modo "Solo lectura".',
+          'Guiar a Carmen para mover los 40 clientes del campo "Para" al campo "CCO" (Con Copia Oculta) y configurar el enlace de la nube en modo "Solo lectura".',
         userPrompt:
           'Vale, ya he subido el PDF a la nube y se ha pegado el enlace en el cuerpo del mensaje. Tengo a los 40 clientes escritos en la casilla "Para:". ¿Le doy a Enviar ya mismo o tengo que cambiar algo para que no vean los correos de los demás ni me borren el archivo?',
         screenStateDescription:
           'Enlace de nube insertado en el cuerpo del correo. Los 40 correos de clientes externos siguen en el campo "Para:". El campo "CCO" está oculto o vacío.',
-        hint: 'Indícale dos pasos clave: 1) Cortar y pegar las 40 direcciones en el campo CCO (Copia de Carbón Oculta) para que ningún cliente vea los correos de otros, y 2) Asegurar que el enlace de la nube tenga permisos de "Solo lectura / Ver".',
+        hint: 'Indícale dos pasos clave: 1) Cortar y pegar las 40 direcciones en el campo CCO (Con Copia Oculta) para que ningún cliente vea los correos de otros, y 2) Asegurar que el enlace de la nube tenga permisos de "Solo lectura / Ver".',
         conceptGroups: [
           {
-            name: 'Campo CCO (Copia de Carbón Oculta)',
+            name: 'Campo CCO (Con Copia Oculta)',
             description: 'Mover las direcciones de los 40 clientes al campo CCO para ocultar sus correos entre sí y cumplir con protección de datos.',
-            keywords: ['cco', 'oculto', 'oculta', 'copia oculta', 'privacidad', 'no vean', 'bcc', 'protección de datos']
+            keywords: ['cco', 'copia oculta', 'con copia oculta', 'bcc']
           },
           {
             name: 'Permisos de solo lectura en el enlace',
             description: 'Configurar el enlace compartido en modo lectura/visualización para evitar que modifiquen o borren el documento.',
-            keywords: ['lectura', 'ver', 'permiso', 'permisos', 'editar', 'modifiquen', 'visualizar', 'descargar']
+            keywords: ['solo lectura', 'sólo lectura', 'puede ver', 'pueden ver', 'solo ver', 'permiso de lectura', 'permisos', 'sin poder editar', 'no puedan editar', 'no puedan modificar', 'modifiquen']
           }
         ],
         modelResponse:
-          '¡Alto, aún no pulse Enviar! Qué bien que me ha preguntado. Primero: seleccione las 40 direcciones del campo "Para", córtelas y péguelas en el campo "CCO" (Copia de Carbón Oculta); así cada cliente recibirá el correo sin ver las direcciones de los demás. Segundo: haga clic sobre el enlace del archivo y marque "Cualquier persona con el enlace puede ver (Solo lectura)" para que nadie pueda modificarlo.',
+          '¡Alto, aún no pulse Enviar! Qué bien que me ha preguntado. Primero: seleccione las 40 direcciones del campo "Para", córtelas y péguelas en el campo "CCO" (Con Copia Oculta); así cada cliente recibirá el correo sin ver las direcciones de los demás. Segundo: haga clic sobre el enlace del archivo y marque "Cualquier persona con el enlace puede ver (Solo lectura)" para que nadie pueda modificarlo.',
         tacticalOptions: [
           {
             id: '1042-s2-opt1',
@@ -196,12 +196,12 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
           {
             name: 'Autodestinatario en Para con CCO',
             description: 'Confirmar que poner el propio correo del remitente en el campo "Para" evita filtros antispam cuando todos los destinatarios van en CCO.',
-            keywords: ['propio', 'su correo', 'para', 'usted misma', 'remitente', 'enviar']
+            keywords: ['su propio correo', 'su propia dirección', 'su dirección en para', 'su correo en para', 'su correo en el campo para', 'usted misma', 'a sí misma', 'póngase en para', 'póngase usted']
           },
           {
             name: 'Verificación en Elementos Enviados / Bandeja de Salida',
             description: 'Comprobar en la carpeta "Elementos enviados" (Sent) y que no quede atascado en "Bandeja de salida".',
-            keywords: ['enviados', 'elementos enviados', 'bandeja de salida', 'carpeta', 'comprobar', 'verificar']
+            keywords: ['elementos enviados', 'enviados', 'bandeja de salida']
           }
         ],
         modelResponse:
@@ -301,12 +301,12 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
           {
             name: 'Existencia de Autorrecuperación / Copias temporales',
             description: 'Explicar que el procesador de textos guarda borradores automáticos de autorrecuperación en segundo plano.',
-            keywords: ['autorrecuperación', 'autorrecuperacion', 'temporal', 'temporales', 'copia', 'automático', 'automatico', 'recuperar', 'borrador']
+            keywords: ['autorrecuperación', 'copia temporal', 'copias temporales', 'copia automática', 'recuperar', 'recuperación', 'no está perdido']
           },
           {
             name: 'Precaución de no guardar encima del archivo antiguo',
             description: 'Indicar que no pulse Guardar ni edite el archivo viejo todavía para no pisar la versión recuperable.',
-            keywords: ['no guarde', 'no toque', 'no sobrescriba', 'no escriba', 'espere', 'sin guardar']
+            keywords: ['no guarde', 'no pulse guardar', 'no toque', 'no sobrescriba', 'no escriba', 'no cierre', 'no lo cierre', 'no lo guarde', 'espere']
           }
         ],
         modelResponse:
@@ -379,12 +379,12 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
           {
             name: 'Menú Archivo > Información / Abrir Recientes',
             description: 'Indicar que entre en el menú Archivo y acceda a Información o a la lista de documentos recientes.',
-            keywords: ['archivo', 'información', 'informacion', 'abrir', 'recientes', 'menú', 'menu', 'pestaña']
+            keywords: ['archivo > información', 'archivo > abrir', 'pestaña archivo', 'menú archivo', 'información', 'recientes']
           },
           {
             name: 'Administrar documento / Recuperar documentos no guardados',
             description: 'Seleccionar la opción Administrar documento, Historial de versiones o el botón Recuperar documentos no guardados.',
-            keywords: ['administrar', 'recuperar', 'no guardados', 'versiones', 'historial', 'autoguardado', 'asd', 'borrador']
+            keywords: ['administrar documento', 'recuperar documentos no guardados', 'documentos no guardados', 'no guardados', 'cuando se cerró sin guardar', 'versiones', 'asd']
           }
         ],
         modelResponse:
@@ -457,22 +457,22 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
           {
             name: 'Restaurar / Guardar como el archivo recuperado',
             description: 'Pulsar el botón Restaurar o Guardar como para consolidar el archivo temporal en el disco.',
-            keywords: ['restaurar', 'guardar como', 'guardar', 'consolidar', 'fijo']
+            keywords: ['restaurar', 'guardar como', 'guárdelo', 'guardarlo']
           },
           {
             name: 'Atajo Ctrl + G / Ctrl + S y Autoguardado',
             description: 'Enseñar el atajo de teclado Ctrl + G (o Ctrl + S) y la función de Autoguardado.',
-            keywords: ['ctrl', 'control', 'autoguardado', 'automático', 'automatico', 'atajo', 'minutos', 'opciones']
+            keywords: ['ctrl + g', 'control + g', 'ctrl + s', 'autoguardado', 'autorrecuperación', 'archivo > opciones > guardar']
           }
         ],
         modelResponse:
-          '¡Qué alegría, Roberto! Ahora pulse inmediatamente ese botón de "Restaurar" (o vaya a "Archivo > Guardar como" y guárdelo con un nombre claro). Como consejo para que no vuelva a sufrir este susto: active la pestaña de "Autoguardado" arriba a la izquierda y acostúmbrese a pulsar el atajo "Ctrl + G" (o Ctrl + S si su versión está en inglés) cada vez que termine un apartado.',
+          '¡Qué alegría, Roberto! Ahora pulse inmediatamente ese botón de "Restaurar" (o vaya a "Archivo > Guardar como" y guárdelo con un nombre claro). Como consejo para que no vuelva a sufrir este susto: active el interruptor "Autoguardado" de arriba a la izquierda (funciona cuando el archivo está guardado en OneDrive o SharePoint), deje la Autorrecuperación cada 5 minutos en "Archivo > Opciones > Guardar" y acostúmbrese a pulsar el atajo "Ctrl + G" (o Ctrl + S si su versión está en inglés) cada vez que termine un apartado.',
         tacticalOptions: [
           {
             id: '1048-s3-opt1',
             label: 'Restaurar + Consejo educativo Ctrl+G y Autoguardado (Recomendada)',
             responseText:
-              '¡Fantástica noticia, Roberto! Pulse ahora mismo el botón "Restaurar" (o "Guardar como") para dejarlo a salvo en su carpeta. Y para que nunca más se lleve este susto, le doy dos trucos muy cómodos: active el interruptor de "Autoguardado" arriba a la izquierda y pulse las teclas "Ctrl + G" de vez en cuando mientras escribe para guardar al instante.',
+              '¡Fantástica noticia, Roberto! Pulse ahora mismo el botón "Restaurar" (o "Guardar como") para dejarlo a salvo en su carpeta. Y para que nunca más se lleve este susto, le doy dos trucos muy cómodos: active el interruptor de "Autoguardado" arriba a la izquierda (si guarda el archivo en OneDrive o SharePoint) y pulse las teclas "Ctrl + G" de vez en cuando mientras escribe para guardar al instante.',
             empathyScore: 98,
             clarityScore: 98,
             technicalScore: 100,
@@ -536,9 +536,9 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
     initialFrustration: 80,
     initialMoodLabel: 'Acorralada · Con el Consejo de Administración en la sala',
     contextSummary:
-      'Elena ha conectado el portátil por HDMI al proyector de la sala de juntas. El sistema está en modo "Ampliar" pero ella no sabe que es un escritorio extendido, por lo que en la pared solo se ve el fondo de pantalla vacío. Además, necesita leer sus notas de orador en su portátil sin que el Consejo las vea en la pantalla grande.',
+      'Elena ha conectado el portátil por HDMI al proyector de la sala de juntas. El sistema está en modo "Extender" pero ella no sabe que es un escritorio extendido, por lo que en la pared solo se ve el fondo de pantalla vacío. Además, necesita leer sus notas de orador en su portátil sin que el Consejo las vea en la pantalla grande.',
     technicalSkillsTested: [
-      'Atajo de proyección de pantalla Windows + P (Duplicar vs Ampliar/Extender)',
+      'Atajo de proyección de pantalla Windows + P (Duplicar vs Extender)',
       'Iniciar presentación a pantalla completa (F5 / Mayús + F5)',
       'Uso de la Vista Moderador / Presentador en modo pantalla extendida'
     ],
@@ -552,32 +552,32 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
         stageNumber: 1,
         title: 'Diagnóstico del Escritorio Extendido y Atajo Win + P',
         objective:
-          'Tranquilizar a Elena explicándole que el proyector NO está roto: está en modo "Ampliar/Extender pantalla", y enseñarle el atajo de teclado Windows + P.',
+          'Tranquilizar a Elena explicándole que el proyector NO está roto: está en modo "Extender", y enseñarle el atajo de teclado Windows + P.',
         userPrompt:
           '¡Oiga, baje ahora mismo a la Sala de Juntas o arrégleme esto por teléfono! ¡Tengo a los 8 miembros del Consejo mirándome! He enchufado el cable HDMI del proyector a mi portátil y en la pantalla de la pared solo sale la foto del paisaje de Windows vacía, ¡no sale mi PowerPoint ni mis iconos! ¡Este proyector está averiado!',
         screenStateDescription:
-          'Portátil mostrando el programa de presentaciones abierto. Proyector de la sala mostrando únicamente el fondo de escritorio sin iconos (Modo de proyección actual: "Ampliar").',
-        hint: 'Tranquilízala diciéndole que el cable y el proyector funcionan bien: simplemente está en modo "Ampliar" (segunda pantalla extendida). Enséñale a pulsar la tecla Windows + P para abrir el menú de Proyectar.',
+          'Portátil mostrando el programa de presentaciones abierto. Proyector de la sala mostrando únicamente el fondo de escritorio sin iconos (Modo de proyección actual: "Extender").',
+        hint: 'Tranquilízala diciéndole que el cable y el proyector funcionan bien: simplemente está en modo "Extender" (segunda pantalla extendida). Enséñale a pulsar la tecla Windows + P para abrir el menú de Proyectar.',
         conceptGroups: [
           {
-            name: 'Explicación de pantalla extendida / Modo Ampliar',
-            description: 'Explicar que el proyector no está roto, sino funcionando como una segunda pantalla extendida (Ampliar).',
-            keywords: ['ampliar', 'extendido', 'extendida', 'segunda pantalla', 'no está roto', 'funciona', 'duplicar']
+            name: 'Explicación de pantalla extendida / Modo Extender',
+            description: 'Explicar que el proyector no está roto, sino funcionando como una segunda pantalla extendida (Extender).',
+            keywords: ['extender', 'extendido', 'extendida', 'escritorio extendido', 'segunda pantalla', 'segundo monitor', 'ampliar']
           },
           {
             name: 'Atajo de teclado Windows + P',
             description: 'Indicar el atajo de teclado Windows + P (Win + P) para abrir el panel de modos de proyección.',
-            keywords: ['win + p', 'windows + p', 'tecla windows', 'proyectar', 'win+p']
+            keywords: ['windows + p', 'win + p', 'tecla windows y la p', 'windows y p']
           }
         ],
         modelResponse:
-          'Buenos días, Elena. Tranquila, le confirmo que ni su portátil ni el proyector están averiados, lo solucionamos en 15 segundos sin que nadie en la sala note nada. Como se ve el fondo de pantalla en la pared, significa que el cable HDMI funciona perfecto pero está en modo "Ampliar" (como si fuera un segundo monitor al lado del suyo). Pulse a la vez la tecla "Windows + P" en su teclado y dígame qué opciones le aparecen a la derecha.',
+          'Buenos días, Elena. Tranquila, le confirmo que ni su portátil ni el proyector están averiados, lo solucionamos en 15 segundos sin que nadie en la sala note nada. Como se ve el fondo de pantalla en la pared, significa que el cable HDMI funciona perfecto pero está en modo "Extender" (como si fuera un segundo monitor al lado del suyo). Pulse a la vez la tecla "Windows + P" en su teclado y dígame qué opciones le aparecen a la derecha.',
         tacticalOptions: [
           {
             id: '1053-s1-opt1',
-            label: 'Tranquilizadora + Explicación de Ampliar y Win + P (Recomendada)',
+            label: 'Tranquilizadora + Explicación de Extender y Win + P (Recomendada)',
             responseText:
-              'Buenos días, Elena. Tranquila, el proyector y el cable están funcionando perfectamente; lo resolvemos en 15 segundos. En la pared solo ve el fondo vacío porque su equipo está en modo "Ampliar" (una segunda pantalla extendida). Pulse en su teclado la tecla "Windows + P" para abrir el menú de proyección.',
+              'Buenos días, Elena. Tranquila, el proyector y el cable están funcionando perfectamente; lo resolvemos en 15 segundos. En la pared solo ve el fondo vacío porque su equipo está en modo "Extender" (una segunda pantalla extendida). Pulse en su teclado la tecla "Windows + P" para abrir el menú de proyección.',
             empathyScore: 97,
             clarityScore: 96,
             technicalScore: 100,
@@ -585,7 +585,7 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
             coachFeedback:
               'Excelente: le das seguridad frente al Consejo de Administración, diagnosticas al instante por qué se ve solo el fondo de pantalla y le das el atajo universal Win + P.',
             userReply:
-              '¡Ay, menos mal! He pulsado Windows + P y me ha salido una columna a la derecha con cuatro dibujos: "Solo pantalla de PC", "Duplicado", "Ampliar" y "Solo segunda pantalla". Ahora mismo está marcado "Ampliar".',
+              '¡Ay, menos mal! He pulsado Windows + P y me ha salido una columna a la derecha con cuatro dibujos: "Solo pantalla de PC", "Duplicar", "Extender" y "Solo segunda pantalla". Ahora mismo está marcado "Extender".',
             advancesStage: true
           },
           {
@@ -600,7 +600,7 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
             coachFeedback:
               'Ridiculizar a un usuario que está pasando apuros frente a la directiva aumenta su tensión. El diagnóstico es correcto, pero la forma falla.',
             userReply:
-              'Le recuerdo que estoy en altavoz bajito delante del director general, ¡ahórrese los comentarios! Ya he pulsado Windows + P y veo que está en "Ampliar". ¿Ahora qué hago?',
+              'Le recuerdo que estoy en altavoz bajito delante del director general, ¡ahórrese los comentarios! Ya he pulsado Windows + P y veo que está en "Extender". ¿Ahora qué hago?',
             advancesStage: true
           },
           {
@@ -620,9 +620,9 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
           }
         ],
         successUserReply:
-          '¡Qué alivio oír eso! Acabo de pulsar Windows + P y veo a la derecha que está marcado "Ampliar". Ahora bien: tengo apuntes confidenciales debajo de cada diapositiva que quiero leer en mi portátil sin que el Consejo los vea en la pared. ¿Cómo lanzo la presentación así?',
+          '¡Qué alivio oír eso! Acabo de pulsar Windows + P y veo a la derecha que está marcado "Extender". Ahora bien: tengo apuntes confidenciales debajo de cada diapositiva que quiero leer en mi portátil sin que el Consejo los vea en la pared. ¿Cómo lanzo la presentación así?',
         coldSuccessUserReply:
-          'Ya he pulsado Windows + P y sale marcado "Ampliar". Quiero que en la pared salga la diapositiva limpia y en mi portátil mis notas privadas. ¿Qué pulso?',
+          'Ya he pulsado Windows + P y sale marcado "Extender". Quiero que en la pared salga la diapositiva limpia y en mi portátil mis notas privadas. ¿Qué pulso?',
         incompleteUserReply:
           'Entiendo que el proyector no está roto, pero ¿qué combinación de teclas de Windows pulso exactamente para ver u ordenar los modos de proyección de pantalla?'
       },
@@ -630,62 +630,62 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
         stageNumber: 2,
         title: 'Vista Moderador y Lanzamiento con F5',
         objective:
-          'Explicar a Elena que manteniendo el modo "Ampliar", al activar "Usar Vista Moderador" y pulsar F5 (o Mayús + F5), el público verá la diapositiva limpia en el proyector mientras ella ve sus notas privadas en el portátil.',
+          'Explicar a Elena que manteniendo el modo "Extender", al activar "Usar Vista Moderador" y pulsar F5 (o Mayús + F5), el público verá la diapositiva limpia en el proyector mientras ella ve sus notas privadas en el portátil.',
         userPrompt:
-          'Escuche bien: en mi presentación tengo notas privadas con los márgenes de descuento en cada diapositiva. Si pongo "Duplicado", el Consejo verá mis notas en la pared. ¿Cómo hago para que en el proyector salga SOLO la diapositiva a pantalla completa y en mi portátil vea mis notas?',
+          'Escuche bien: en mi presentación tengo notas privadas con los márgenes de descuento en cada diapositiva. Si pongo "Duplicar", el Consejo verá mis notas en la pared. ¿Cómo hago para que en el proyector salga SOLO la diapositiva a pantalla completa y en mi portátil vea mis notas?',
         screenStateDescription:
-          'Menú Windows + P en modo "Ampliar". Programa de presentaciones en vista de edición mostrando el panel inferior de notas confidenciales.',
-        hint: 'Indícale que mantenga el modo "Ampliar" (porque permite mostrar cosas distintas en cada pantalla), que en la pestaña "Presentación con diapositivas" marque "Usar Vista Moderador" y que pulse la tecla F5 para iniciar desde el principio.',
+          'Menú Windows + P en modo "Extender". Programa de presentaciones en vista de edición mostrando el panel inferior de notas confidenciales.',
+        hint: 'Indícale que mantenga el modo "Extender" (porque permite mostrar cosas distintas en cada pantalla), que en la pestaña "Presentación con diapositivas" marque "Usar Vista Moderador" y que pulse la tecla F5 para iniciar desde el principio.',
         conceptGroups: [
           {
-            name: 'Mantener modo Ampliar + Vista Moderador / Presentador',
-            description: 'Explicar que el modo Ampliar junto con la "Vista Moderador" permite ver notas en el portátil y solo la diapositiva en el proyector.',
-            keywords: ['moderador', 'presentador', 'vista moderador', 'ampliar', 'notas', 'presentación con diapositivas']
+            name: 'Mantener modo Extender + Vista Moderador / Presentador',
+            description: 'Explicar que el modo Extender junto con la "Vista Moderador" permite ver notas en el portátil y solo la diapositiva en el proyector.',
+            keywords: ['vista moderador', 'moderador', 'vista del presentador', 'presentador']
           },
           {
             name: 'Atajo F5 (o Mayús + F5) para iniciar presentación',
-            description: 'Pulsar la tecla F5 (o el icono de copita/presentación) para lanzar las diapositivas a pantalla completa.',
-            keywords: ['f5', 'pantalla completa', 'iniciar', 'desde el principio', 'copita']
+            description: 'Pulsar la tecla F5 (o el botón "Desde el principio" de la pestaña Presentación con diapositivas) para lanzar las diapositivas a pantalla completa.',
+            keywords: ['f5', 'desde el principio', 'pantalla completa']
           }
         ],
         modelResponse:
-          '¡Precisamente para eso el modo "Ampliar" es perfecto! Déjelo en "Ampliar", vaya en su programa de presentaciones a la pestaña superior "Presentación con diapositivas", asegúrese de que la casilla "Usar vista Moderador" está marcada, y pulse la tecla "F5" en su teclado. Verá que en el proyector aparece la diapositiva limpia a pantalla completa y en su portátil se abre su consola privada con sus notas y el reloj.',
+          '¡Precisamente para eso el modo "Extender" es perfecto! Déjelo en "Extender", vaya en su programa de presentaciones a la pestaña superior "Presentación con diapositivas", asegúrese de que la casilla "Usar vista Moderador" está marcada, y pulse la tecla "F5" en su teclado. Verá que en el proyector aparece la diapositiva limpia a pantalla completa y en su portátil se abre su consola privada con sus notas y el reloj.',
         tacticalOptions: [
           {
             id: '1053-s2-opt1',
-            label: 'Mantener Ampliar + Vista Moderador + F5 (Recomendada)',
+            label: 'Mantener Extender + Vista Moderador + F5 (Recomendada)',
             responseText:
-              '¡Para eso el modo "Ampliar" es su mejor aliado! Déjelo en "Ampliar" y haga esto: en la pestaña superior "Presentación con diapositivas", verifique que la casilla "Usar vista Moderador" esté marcada. Ahora pulse la tecla "F5". En el proyector saldrá solo la diapositiva limpia y en su portátil verá sus notas privadas y la diapositiva siguiente.',
+              '¡Para eso el modo "Extender" es su mejor aliado! Déjelo en "Extender" y haga esto: en la pestaña superior "Presentación con diapositivas", verifique que la casilla "Usar vista Moderador" esté marcada. Ahora pulse la tecla "F5". En el proyector saldrá solo la diapositiva limpia y en su portátil verá sus notas privadas y la diapositiva siguiente.',
             empathyScore: 98,
             clarityScore: 98,
             technicalScore: 100,
             frustrationDelta: -35,
             coachFeedback:
-              'Dominio total de ofimática: explicas por qué "Ampliar" es necesario para la Vista Moderador y le das el atajo directo F5 para arrancar con elegancia.',
+              'Dominio total de ofimática: explicas por qué "Extender" es necesario para la Vista Moderador y le das el atajo directo F5 para arrancar con elegancia.',
             userReply:
               '¡Acabo de pulsar F5 y es magia pura! En la pared se ve la portada a pantalla completa y en mi portátil tengo mis notas de descuentos y el cronómetro. ¡Un último detalle rápido!',
             advancesStage: true
           },
           {
             id: '1053-s2-opt2',
-            label: 'Cambiar a Duplicado (Expone las notas privadas)',
+            label: 'Cambiar a Duplicar (Expone las notas privadas)',
             responseText:
-              'Elija "Duplicado" en el menú Windows + P y arrastre la ventana un poco hacia abajo para intentar esconder las notas fuera del borde.',
+              'Elija "Duplicar" en el menú Windows + P y arrastre la ventana un poco hacia abajo para intentar esconder las notas fuera del borde.',
             empathyScore: 60,
             clarityScore: 65,
             technicalScore: 10,
             frustrationDelta: 20,
             coachFeedback:
-              'Error grave: en modo "Duplicado" ambas pantallas muestran exactamente la misma imagen; el público verá la interfaz del programa y sus notas privadas.',
+              'Error grave: en modo "Duplicar" ambas pantallas muestran exactamente la misma imagen; el público verá la interfaz del programa y sus notas privadas.',
             userReply:
-              '¡¿Pero qué dice?! ¡Si pongo "Duplicado" van a ver toda mi pantalla y mis notas de márgenes! ¿No existe un modo de presentador o moderador usando las dos pantallas separadas y una tecla para lanzar la presentación?',
+              '¡¿Pero qué dice?! ¡Si pongo "Duplicar" van a ver toda mi pantalla y mis notas de márgenes! ¿No existe un modo de presentador o moderador usando las dos pantallas separadas y una tecla para lanzar la presentación?',
             advancesStage: false
           },
           {
             id: '1053-s2-opt3',
             label: 'Correcta pero brusca',
             responseText:
-              'Déjelo en Ampliar, active Vista Moderador en la pestaña Presentación y dele a F5. Es la función básica de cualquier presentación.',
+              'Déjelo en Extender, active Vista Moderador en la pestaña Presentación y dele a F5. Es la función básica de cualquier presentación.',
             empathyScore: 35,
             clarityScore: 80,
             technicalScore: 95,
@@ -708,32 +708,32 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
         stageNumber: 3,
         title: 'Conmutación de Pantallas y Atajo Mayús + F5',
         objective:
-          'Enseñar a Elena el botón "Configuración de visualización > Cambiar entre vista Moderador y Presentación" por si las pantallas salen invertidas, y el atajo Mayús + F5 para iniciar desde la diapositiva actual.',
+          'Enseñar a Elena el botón "Mostrar configuración > Intercambiar Vista Moderador y Presentación de diapositivas" por si las pantallas salen invertidas, y el atajo Mayús + F5 para iniciar desde la diapositiva actual.',
         userPrompt:
           'Por si durante la reunión cierro la presentación para enseñar un Excel y luego quiero retomar en la diapositiva 12 sin volver a la 1, ¿qué atajo uso? ¿Y qué botón toco arriba si algún día me salen las notas en la pared y la diapositiva en el portátil?',
         screenStateDescription:
-          'Vista Moderador activa en el portátil con barra superior mostrando "Configuración de visualización" (Cambiar entre vista Moderador y Presentación).',
-        hint: 'Explícale dos trucos de oro: 1) Para reanudar desde la diapositiva actual se pulsa "Mayús + F5" (Shift + F5). 2) Si las pantallas salen al revés, arriba en la Vista Moderador se pulsa "Configuración de visualización > Cambiar entre vista Moderador y Presentación".',
+          'Vista Moderador activa en el portátil con barra superior mostrando "Mostrar configuración" (Cambiar entre vista Moderador y Presentación).',
+        hint: 'Explícale dos trucos de oro: 1) Para reanudar desde la diapositiva actual se pulsa "Mayús + F5" (Shift + F5). 2) Si las pantallas salen al revés, arriba en la Vista Moderador se pulsa "Mostrar configuración > Intercambiar Vista Moderador y Presentación de diapositivas".',
         conceptGroups: [
           {
             name: 'Atajo Mayús + F5 (Diapositiva actual)',
             description: 'Explicar que Mayús + F5 (Shift + F5) inicia la presentación directamente desde la diapositiva seleccionada.',
-            keywords: ['mayús + f5', 'mayus + f5', 'shift + f5', 'shift+f5', 'actual', 'diapositiva actual']
+            keywords: ['mayús + f5', 'shift + f5', 'desde la diapositiva actual', 'diapositiva actual']
           },
           {
-            name: 'Cambiar / Invertir pantallas en Configuración de visualización',
-            description: 'Indicar el menú "Configuración de visualización > Cambiar entre vista Moderador y Presentación" en la parte superior.',
-            keywords: ['configuración de visualización', 'configuracion de visualizacion', 'cambiar', 'invertir', 'intercambiar', 'arriba']
+            name: 'Cambiar / Invertir pantallas en Mostrar configuración',
+            description: 'Indicar el menú "Mostrar configuración > Intercambiar Vista Moderador y Presentación de diapositivas" en la parte superior.',
+            keywords: ['mostrar configuración', 'intercambiar', 'invertir las pantallas']
           }
         ],
         modelResponse:
-          'Le dejo los dos trucos apuntados: 1) Para retomar directamente en la diapositiva en la que esté sin volver a la portada, pulse "Mayús + F5" (Shift + F5). 2) Si alguna vez le salen las pantallas invertidas, justo en el borde superior de su Vista Moderador verá "Configuración de visualización"; pulse ahí y elija "Cambiar entre vista Moderador y Presentación" para intercambiarlas al instante. ¡Mucha suerte con el Consejo!',
+          'Le dejo los dos trucos apuntados: 1) Para retomar directamente en la diapositiva en la que esté sin volver a la portada, pulse "Mayús + F5" (Shift + F5). 2) Si alguna vez le salen las pantallas invertidas, justo en el borde superior de su Vista Moderador verá "Mostrar configuración"; pulse ahí y elija "Intercambiar Vista Moderador y Presentación de diapositivas" para intercambiarlas al instante. ¡Mucha suerte con el Consejo!',
         tacticalOptions: [
           {
             id: '1053-s3-opt1',
             label: 'Mayús + F5 + Intercambiar pantallas (Recomendada)',
             responseText:
-              'Dos trucos rapidísimos que le van a encantar: 1) Para arrancar directamente en la diapositiva actual (como la 12), pulse "Mayús + F5" (Shift + F5). 2) Si algún día las pantallas salen al revés, en la barra superior de su Vista Moderador pulse "Configuración de visualización" y elija "Cambiar entre vista Moderador y Presentación". ¡Mucho éxito en la reunión!',
+              'Dos trucos rapidísimos que le van a encantar: 1) Para arrancar directamente en la diapositiva actual (como la 12), pulse "Mayús + F5" (Shift + F5). 2) Si algún día las pantallas salen al revés, en la barra superior de su Vista Moderador pulse "Mostrar configuración" y elija "Cambiar entre vista Moderador y Presentación". ¡Mucho éxito en la reunión!',
             empathyScore: 98,
             clarityScore: 98,
             technicalScore: 100,
@@ -741,7 +741,7 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
             coachFeedback:
               'Resolución sobresaliente: respondes con precisión quirúrgica a ambas dudas de ofimática y despides a la usuaria dándole confianza para su presentación.',
             userReply:
-              '¡Apuntado Mayús + F5 y el botón de Configuración de visualización! Ha sido usted rapidísimo, claro y súper amable. ¡Empiezo la reunión ahora mismo, mil gracias!',
+              '¡Apuntado Mayús + F5 y el botón de Mostrar configuración! Ha sido usted rapidísimo, claro y súper amable. ¡Empiezo la reunión ahora mismo, mil gracias!',
             advancesStage: true
           },
           {
@@ -763,7 +763,7 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
             id: '1053-s3-opt3',
             label: 'Correcta pero apurada',
             responseText:
-              'Use Shift + F5 para la diapositiva actual y el botón Cambiar pantallas en Configuración de visualización arriba. Le dejo que tengo más tickets.',
+              'Use Shift + F5 para la diapositiva actual y el botón Cambiar pantallas en Mostrar configuración arriba. Le dejo que tengo más tickets.',
             empathyScore: 45,
             clarityScore: 80,
             technicalScore: 95,
@@ -771,12 +771,12 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
             coachFeedback:
               'Datos técnicos correctos, aunque el cierre resulta seco.',
             userReply:
-              'Vale, tomo nota de Shift + F5 y Configuración de visualización. Gracias.',
+              'Vale, tomo nota de Shift + F5 y Mostrar configuración. Gracias.',
             advancesStage: true
           }
         ],
         successUserReply:
-          '¡Todo anotado! Mayús + F5 para la diapositiva actual y Configuración de visualización para intercambiar pantallas. ¡Muchísimas gracias por la ayuda tan profesional!',
+          '¡Todo anotado! Mayús + F5 para la diapositiva actual y Mostrar configuración para intercambiar pantallas. ¡Muchísimas gracias por la ayuda tan profesional!',
         coldSuccessUserReply:
           'Anotado Mayús + F5 y el cambio de visualización. Gracias, empiezo la reunión.',
         incompleteUserReply:
@@ -790,7 +790,7 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
     category: 'email',
     categoryLabel: 'Correo Electrónico',
     difficulty: 'Intermedio',
-    title: 'Bandeja sin recibir correos urgentes: Modo sin conexión, Spam y Reglas',
+    title: 'Bandeja sin recibir correos urgentes: Trabajar sin conexión, correo no deseado y búsqueda de adjuntos',
     userName: 'Julián Ortega',
     userRole: 'Coordinador de Logística',
     userDepartment: 'Almacén y Transporte',
@@ -801,7 +801,7 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
     technicalSkillsTested: [
       'Verificación de estado "Trabajar sin conexión" en la barra de estado y pestaña Enviar y recibir',
       'Revisión de carpeta Correo no deseado (Spam) y marcaje de remitente seguro',
-      'Búsqueda avanzada por remitente o adjunto (tiene:adjunto)'
+      'Búsqueda avanzada por remitente o adjunto (hasattachments:yes)'
     ],
     softSkillsTested: [
       'No confrontar cuando el usuario acusa injustamente al departamento de sistemas',
@@ -823,7 +823,7 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
           {
             name: 'Comprobar estado "Trabajar sin conexión"',
             description: 'Revisar en la barra inferior de estado o en la pestaña "Enviar y recibir" si está activo el modo "Trabajar sin conexión".',
-            keywords: ['sin conexión', 'sin conexion', 'desconectado', 'enviar y recibir', 'barra inferior', 'abajo', 'conectado']
+            keywords: ['trabajar sin conexión', 'trabajando sin conexión', 'sin conexión', 'desconectado', 'enviar y recibir']
           }
         ],
         modelResponse:
@@ -896,16 +896,16 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
           {
             name: 'Carpeta Correo no deseado / Spam',
             description: 'Indicar que revise la carpeta "Correo no deseado" o "Spam" en la columna izquierda de carpetas.',
-            keywords: ['no deseado', 'spam', 'basura', 'carpeta', 'izquierda', 'filtro']
+            keywords: ['correo no deseado', 'no deseado', 'spam']
           },
           {
             name: 'Buscador de correo / RemitenteSeguro',
             description: 'Usar el buscador en "Todos los elementos" o marcar el correo como "No es correo no deseado / Remitente seguro".',
-            keywords: ['buscar', 'buscador', 'seguro', 'no es spam', 'mover', 'bandeja de entrada', 'remitente']
+            keywords: ['no es correo no deseado', 'no es spam', 'remitente seguro', 'remitentes seguros', 'confiar siempre', 'bandeja de entrada']
           }
         ],
         modelResponse:
-          'Como es la primera vez que ese proveedor le escribe y trae un PDF adjunto, es muy probable que el filtro de seguridad lo haya apartado. Mire en la columna de carpetas de la izquierda y haga clic en "Correo no deseado" (o "Spam"). Cuando lo vea ahí, haga clic derecho sobre el mensaje y seleccione "Correo no deseado > No es correo no deseado" (y marque "Confiar siempre en el remitente") para que pase a su Bandeja de entrada.',
+          'Buena noticia, Julián: casi seguro que el albarán está ahí y no se ha perdido. Como es la primera vez que ese proveedor le escribe y trae un PDF adjunto, es muy probable que el filtro de seguridad lo haya apartado. Mire en la columna de carpetas de la izquierda y haga clic en "Correo no deseado" (o "Spam"). Cuando lo vea ahí, haga clic derecho sobre el mensaje y seleccione "Correo no deseado > No es correo no deseado" (y marque "Confiar siempre en el remitente") para que pase a su Bandeja de entrada.',
         tacticalOptions: [
           {
             id: '1059-s2-opt1',
@@ -964,32 +964,32 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
         stageNumber: 3,
         title: 'Búsqueda Rápida de Adjuntos y Cierre Preventivo',
         objective:
-          'Enseñar a Julián a usar el filtro "Tiene archivos adjuntos" (o escribir tiene:adjunto / nombre del archivo) en la barra de búsqueda superior y verificar el estado "Conectado" abajo.',
+          'Enseñar a Julián a usar el filtro "Tiene datos adjuntos" (o escribir hasattachments:yes / nombre del archivo) en la barra de búsqueda superior y verificar el estado "Conectado" abajo.',
         userPrompt:
           'Con el volumen de albaranes que recibo al día, ¿qué truco me enseña para filtrar en un segundo solo los correos que traigan archivos adjuntos y cómo distingo de un vistazo si mi correo está conectado?',
         screenStateDescription:
-          'Bandeja de entrada con barra de búsqueda superior activa y botón de filtro rápido "Tiene archivos adjuntos". Barra inferior mostrando "Conectado a: Servidor de correo".',
-        hint: 'Indícale que al hacer clic en la barra de búsqueda superior aparece el botón "Tiene archivos adjuntos" (o escribiendo tiene:adjunto / ext:pdf) y que abajo a la derecha siempre debe figurar "Conectado".',
+          'Bandeja de entrada con barra de búsqueda superior activa y botón de filtro rápido "Tiene datos adjuntos". Barra inferior mostrando "Conectado a: Servidor de correo".',
+        hint: 'Indícale que al hacer clic en la barra de búsqueda superior aparece el botón "Tiene datos adjuntos" (o escribiendo hasattachments:yes / .pdf) y que abajo a la derecha siempre debe figurar "Conectado".',
         conceptGroups: [
           {
-            name: 'Filtro de búsqueda "Tiene archivos adjuntos"',
-            description: 'Usar la barra de búsqueda con el botón "Tiene archivos adjuntos" o buscar por ".pdf" / "tiene:adjunto".',
-            keywords: ['adjuntos', 'tiene archivos adjuntos', 'tiene:adjunto', 'pdf', 'búsqueda', 'busqueda', 'filtrar', 'clip']
+            name: 'Filtro de búsqueda "Tiene datos adjuntos"',
+            description: 'Usar la barra de búsqueda con el botón "Tiene datos adjuntos" o buscar por ".pdf" / "hasattachments:yes".',
+            keywords: ['tiene datos adjuntos', 'datos adjuntos', 'hasattachments:yes', 'adjuntos', 'clip', '.pdf']
           },
           {
             name: 'Verificación visual de "Conectado" en barra inferior',
             description: 'Comprobar en la barra de estado inferior que ponga "Conectado" o "Todas las carpetas están actualizadas".',
-            keywords: ['conectado', 'actualizadas', 'barra inferior', 'abajo', 'estado']
+            keywords: ['conectado', 'barra de estado', 'barra inferior', 'abajo a la derecha']
           }
         ],
         modelResponse:
-          'Le va a resultar comodísimo: cuando haga clic en la barra de "Buscar" de arriba, pulse el botón con el icono del clip que dice "Tiene archivos adjuntos" (o escriba directamente ".pdf" junto al nombre de la empresa) y le filtrará al instante solo los albaranes en todas las carpetas. Y de un vistazo, fíjese siempre en que abajo a la derecha ponga "Conectado".',
+          'Le va a resultar comodísimo: cuando haga clic en la barra de "Buscar" de arriba, pulse el botón con el icono del clip que dice "Tiene datos adjuntos" (o escriba directamente ".pdf" junto al nombre de la empresa) y le filtrará al instante solo los albaranes en todas las carpetas. Y de un vistazo, fíjese siempre en que abajo a la derecha ponga "Conectado".',
         tacticalOptions: [
           {
             id: '1059-s3-opt1',
             label: 'Filtro de adjuntos + Chequeo visual de estado (Recomendada)',
             responseText:
-              'Le doy un truco que usa mucho logística: haga clic en la barra de búsqueda de arriba y pulse el botón con el icono del clip "Tiene archivos adjuntos" (o escriba ".pdf" y el nombre del proveedor); así busca en todo el buzón a la vez. Y para quedarse tranquilo, mire siempre que en la esquina inferior derecha ponga "Conectado".',
+              'Le doy un truco que usa mucho logística: haga clic en la barra de búsqueda de arriba y pulse el botón con el icono del clip "Tiene datos adjuntos" (o escriba ".pdf" y el nombre del proveedor); así busca en todo el buzón a la vez. Y para quedarse tranquilo, mire siempre que en la esquina inferior derecha ponga "Conectado".',
             empathyScore: 98,
             clarityScore: 98,
             technicalScore: 100,
@@ -997,7 +997,7 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
             coachFeedback:
               'Cierre pedagógico excelente: adaptas el consejo al puesto de trabajo del usuario (logística y albaranes PDF) y refuerzas la comprobación de la barra de estado.',
             userReply:
-              '¡Oiga, qué maravilla lo del botón de "Tiene archivos adjuntos" y buscar por .pdf! Disculpe que haya entrado tan brusco al principio con los nervios de los camiones, me ha atendido usted de diez.',
+              '¡Oiga, qué maravilla lo del botón de "Tiene datos adjuntos" y buscar por .pdf! Disculpe que haya entrado tan brusco al principio con los nervios de los camiones, me ha atendido usted de diez.',
             advancesStage: true
           },
           {
@@ -1079,12 +1079,12 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
           {
             name: 'Mostrar marcas de formato (Icono ¶ / Mostrar todo)',
             description: 'Activar el botón "Mostrar todo" (símbolo calderón ¶ en la pestaña Inicio) para visualizar los saltos de párrafo vacíos.',
-            keywords: ['mostrar todo', 'marcas', 'formato', 'símbolo', 'simbolo', 'párrafo', 'parrafo', 'inicio', '¶', 'ctrl']
+            keywords: ['mostrar todo', 'marcas de formato', 'marcas de párrafo', '¶', 'p al revés', 'calderón']
           },
           {
             name: 'Causa del descuadre: pulsaciones repetidas de Enter / Intro',
             description: 'Explicar que empujar páginas a base de pulsar Enter hace que al añadir texto arriba se desplacen todas las páginas siguientes.',
-            keywords: ['enter', 'intro', 'espacios', 'líneas en blanco', 'lineas en blanco', 'empujar', 'empuja']
+            keywords: ['enter', 'intro', 'líneas en blanco', 'líneas vacías', 'párrafos vacíos']
           }
         ],
         modelResponse:
@@ -1157,7 +1157,7 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
           {
             name: 'Borrar líneas vacías y usar Salto de página (Ctrl + Enter)',
             description: 'Eliminar los párrafos vacíos y pulsar Ctrl + Enter (o Insertar > Salto de página) para anclar el capítulo al inicio de la página siguiente.',
-            keywords: ['ctrl + enter', 'control + enter', 'ctrl+enter', 'salto de página', 'salto de pagina', 'insertar', 'borrar']
+            keywords: ['ctrl + enter', 'control + enter', 'salto de página']
           }
         ],
         modelResponse:
@@ -1230,16 +1230,16 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
           {
             name: 'Exportar / Guardar como PDF',
             description: 'Guardar o exportar el documento en formato PDF para que conserve exactamente las fuentes, márgenes y saltos de página en cualquier equipo.',
-            keywords: ['pdf', 'exportar', 'guardar como', 'formato pdf', 'imprimir']
+            keywords: ['pdf', 'exportar', 'crear documento pdf']
           },
           {
             name: 'Incrustar fuentes / Congelar diseño',
             description: 'Explicar que el PDF (o la opción Incrustar fuentes en el archivo) evita que cambie la tipografía aunque la imprenta no tenga la fuente instalada.',
-            keywords: ['fuentes', 'letra', 'tipografía', 'tipografia', 'incrustar', 'idéntico', 'identico', 'mueva']
+            keywords: ['fuentes', 'fuente', 'tipografía', 'tipografías', 'incrustar', 'incrustadas', 'congela', 'congelar', 'idéntico']
           }
         ],
         modelResponse:
-          'Para enviar a imprenta o a clientes, lo ideal es convertirlo a PDF, porque congela el diseño exacto y las tipografías aunque ellos no tengan la fuente instalada: vaya a "Archivo > Exportar > Crear documento PDF" (o en "Archivo > Guardar como" despliegue el tipo de archivo y elija "PDF"). Y conserve siempre su archivo original editable para usted.',
+          '¡Buena pregunta, Lucía! Me alegro de que ya esté todo en su sitio. Para enviar a imprenta o a clientes, lo ideal es convertirlo a PDF, porque congela el diseño exacto y las tipografías aunque ellos no tengan la fuente instalada: vaya a "Archivo > Exportar > Crear documento PDF" (o en "Archivo > Guardar como" despliegue el tipo de archivo y elija "PDF"). Y conserve siempre su archivo original editable para usted.',
         tacticalOptions: [
           {
             id: '1064-s3-opt1',
@@ -1333,14 +1333,14 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
         hint: '¡Tranquilízale al instante! No se ha roto la gráfica: en el modo presentación, rozar la tecla "N" (o "B" / el punto ".") pone la pantalla en negro para pausar la charla. Solo tiene que volver a pulsar "N" (o la barra espaciadora / cualquier tecla) y vuelve la diapositiva.',
         conceptGroups: [
           {
-            name: 'Función de pausa en negro (Tecla N / B / Punto)',
+            name: 'Función de pantalla en negro (tecla N o punto)',
             description: 'Explicar que en las presentaciones, tocar la tecla N (o B / punto) pone la pantalla en negro a propósito como pausa del ponente.',
-            keywords: ['tecla n', 'letra n', 'punto', 'pausa', 'negro', 'no se ha roto', 'función', 'funcion', 'normal']
+            keywords: ['tecla n', 'letra n', 'la n', 'punto', 'pantalla en negro', 'pantalla negra', 'negro']
           },
           {
             name: 'Pulsar N o cualquier tecla para recuperar la imagen',
             description: 'Indicar que pulse de nuevo la tecla N, la barra espaciadora o cualquier tecla para que reaparezca la diapositiva.',
-            keywords: ['barra espaciadora', 'cualquier tecla', 'volver a pulsar', 'pulse n', 'espacio', 'flecha']
+            keywords: ['barra espaciadora', 'cualquier tecla', 'vuelva a pulsar', 'volver a pulsar', 'pulse n', 'pulse la n', 'otra vez la n', 'la n otra vez', 'flecha']
           }
         ],
         modelResponse:
@@ -1413,12 +1413,12 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
           {
             name: 'Icono de volumen / altavoz en la barra de tareas',
             description: 'Hacer clic en el icono del altavoz en la esquina inferior derecha de la barra de tareas (junto al reloj).',
-            keywords: ['altavoz', 'volumen', 'sonido', 'abajo a la derecha', 'reloj', 'barra de tareas', 'icono']
+            keywords: ['altavoz', 'volumen', 'icono del sonido', 'barra de tareas', 'junto al reloj']
           },
           {
             name: 'Seleccionar salida de audio HDMI / Proyector',
             description: 'Cambiar el dispositivo de reproducción/salida de los altavoces internos al dispositivo HDMI o Proyector.',
-            keywords: ['hdmi', 'salida', 'dispositivo', 'proyector', 'cambiar', 'seleccionar', 'reproducción']
+            keywords: ['hdmi', 'salida de audio', 'salida de sonido', 'dispositivo de salida', 'dispositivo de reproducción', 'proyector']
           }
         ],
         modelResponse:
@@ -1491,16 +1491,16 @@ export const SCENARIO_TICKETS: ScenarioTicket[] = [
           {
             name: 'Incrustar vídeo (Insertar > Vídeo) frente a Vincular',
             description: 'Explicar que hay que elegir "Insertar / Incrustar" en vez de "Vincular al archivo" para que el vídeo quede guardado dentro del archivo de la presentación.',
-            keywords: ['incrustar', 'insertar', 'vincular', 'dentro', 'archivo', 'multimedia', 'vídeo', 'video']
+            keywords: ['incrustar', 'incrustado', 'incrustada', 'incrústelo', 'vincular', 'vinculado', 'vincular al archivo', 'dentro de la presentación']
           },
           {
             name: 'Respaldo del archivo MP4 en la misma carpeta / Comprimir medios',
             description: 'Recomendar llevar una copia del vídeo MP4 en la misma carpeta del pendrive o usar "Archivo > Información > Comprimir medios".',
-            keywords: ['carpeta', 'pendrive', 'usb', 'copia', 'mp4', 'comprimir']
+            keywords: ['misma carpeta', 'pendrive', 'usb', 'mp4', 'comprimir medios', 'copia del vídeo']
           }
         ],
         modelResponse:
-          'Eso le pasó porque el vídeo estaba "vinculado" (el programa buscaba el vídeo en la carpeta C: de su ordenador de la oficina y no estaba en el pendrive). Para que no vuelva a pasar: cuando vaya a "Insertar > Vídeo > Este dispositivo", pulse el botón "Insertar" normal (no la flechita de "Vincular al archivo"), así el vídeo queda incrustado dentro de la propia presentación. Y como red de seguridad, guarde siempre el archivo MP4 original en la misma carpeta del USB junto a la presentación.',
+          'Me alegro de que ya vuelva a ver la diapositiva, Marcos, y es normal que pase. Eso le pasó porque el vídeo estaba "vinculado" (el programa buscaba el vídeo en la carpeta C: de su ordenador de la oficina y no estaba en el pendrive). Para que no vuelva a pasar: cuando vaya a "Insertar > Vídeo > Este dispositivo", pulse el botón "Insertar" normal (no la flechita de "Vincular al archivo"), así el vídeo queda incrustado dentro de la propia presentación. Y como red de seguridad, guarde siempre el archivo MP4 original en la misma carpeta del USB junto a la presentación.',
         tacticalOptions: [
           {
             id: '1071-s3-opt1',
