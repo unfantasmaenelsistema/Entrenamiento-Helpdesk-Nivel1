@@ -59,6 +59,10 @@ export interface TurnEvaluation {
   stageTitle: string;
   studentMessage: string;
   modeUsed: 'free' | 'tactical';
+  /** Opción táctica o texto copiado de la plantilla (no es redacción propia). */
+  assisted?: boolean;
+  /** Si la intervención hizo avanzar de fase. */
+  advanced?: boolean;
   empathyScore: number;
   clarityScore: number;
   technicalScore: number;
@@ -93,5 +97,9 @@ export interface CompletedTicketRecord {
   clarityAvg: number;
   overallScore: number;
   gradeLabel: string;
+  /** Intervenciones totales, incluidas las que no hicieron avanzar. */
+  attempts?: number;
+  failedAttempts?: number;
+  assistedTurns?: number;
   turns: TurnEvaluation[];
 }

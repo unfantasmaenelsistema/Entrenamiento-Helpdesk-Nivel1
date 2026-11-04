@@ -10,7 +10,24 @@ import {
   UserCheck,
   AlertCircle
 } from 'lucide-react';
-import { CompletedTicketRecord } from '../types/helpdesk';
+import { CompletedTicketRecord, TurnEvaluation } from '../types/helpdesk';
+
+/** Cómo se hizo la intervención: redacción propia, plantilla u opción táctica. */
+const turnTags = (turn: TurnEvaluation): string[] => {
+  const tags: string[] = [];
+  if (turn.advanced === false) tags.push('No avanza de fase');
+  if (turn.modeUsed === 'tactical') tags.push('Opción táctica');
+  else if (turn.assisted) tags.push('Con ayuda (plantilla)');
+  else tags.push('Redacción propia');
+  return tags;
+};
+
+const attemptsLine = (rec: CompletedTicketRecord): string => {
+  const attempts = rec.attempts ?? rec.turns.length;
+  const failed = rec.failedAttempts ?? 0;
+  const assisted = rec.assistedTurns ?? 0;
+  return `${attempts} intervenciones · ${failed} sin avanzar · ${assisted} con ayuda`;
+};
 import { SCENARIO_TICKETS } from '../data/scenarios';
 
 interface EvaluationReportViewProps {
@@ -92,9 +109,10 @@ export const EvaluationReportView: React.FC<EvaluationReportViewProps> = ({
         `- **Paciencia y Empatía:** ${rec.patienceAndEmpathyAvg}% · **Precisión Ofimática:** ${rec.technicalPrecisionAvg}% · **Claridad:** ${rec.clarityAvg}%`
       );
       lines.push(`- **Frustración final del usuario:** ${rec.finalFrustration}%`);
+      lines.push(`- **Intervenciones:** ${attemptsLine(rec)}`);
       lines.push(``);
       for (const turn of rec.turns) {
-        lines.push(`### Fase ${turn.stageNumber}: ${turn.stageTitle}`);
+        lines.push(`### Fase ${turn.stageNumber}: ${turn.stageTitle} (${turnTags(turn).join(' · ')})`);
         lines.push(`- **Respuesta del alumno:** «${turn.studentMessage}»`);
         lines.push(
           `- **Métricas del turno:** Empatía ${turn.empathyScore}% | Técnica ${turn.technicalScore}% | Claridad ${turn.clarityScore}% | Frustración ${turn.frustrationBefore}% → ${turn.frustrationAfter}%`
@@ -126,10 +144,14 @@ export const EvaluationReportView: React.FC<EvaluationReportViewProps> = ({
       activeRecord.patienceAndEmpathyAvg
     }% | Precisión Técnica: ${activeRecord.technicalPrecisionAvg}% | Claridad: ${
       activeRecord.clarityAvg
-    }%`;
-    navigator.clipboard.writeText(summaryText);
-    setCopiedSummary(true);
-    setTimeout(() => setCopiedSummary(false), 2500);
+    }% | ${attemptsLine(activeRecord)}`;
+    navigator.clipboard
+      .writeText(summaryText)
+      .then(() => {
+        setCopiedSummary(true);
+        setTimeout(() => setCopiedSummary(false), 2500);
+      })
+      .catch(() => undefined);
   };
 
   if (completedRecords.length === 0) {
@@ -320,6 +342,7 @@ export const EvaluationReportView: React.FC<EvaluationReportViewProps> = ({
                   Calificación obtenida: {activeRecord.overallScore}/100 —{' '}
                   {activeRecord.gradeLabel}
                 </p>
+                <p className="text-xs text-slate-500 mt-0.5 font-mono">{attemptsLine(activeRecord)}</p>
               </div>
 
               <div className="flex items-center gap-2 shrink-0">
@@ -382,6 +405,22 @@ export const EvaluationReportView: React.FC<EvaluationReportViewProps> = ({
                   <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 pb-2">
                     <span className="font-bold text-slate-900 text-sm">
                       Fase {turn.stageNumber}: {turn.stageTitle}
+                      <span className="ml-2 inline-flex flex-wrap gap-1 align-middle">
+                        {turnTags(turn).map((tag) => (
+                          <span
+                            key={tag}
+                            className={`px-1.5 py-0.5 rounded text-[10px] font-semibold ${
+                              tag === 'No avanza de fase'
+                                ? 'bg-amber-100 text-amber-800'
+                                : tag === 'Redacción propia'
+                                ? 'bg-emerald-100 text-emerald-800'
+                                : 'bg-slate-200 text-slate-700'
+                            }`}
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </span>
                     </span>
                     <div className="font-mono tabular-nums text-slate-600 flex items-center gap-2">
                       <span>Empatía: {turn.empathyScore}%</span>

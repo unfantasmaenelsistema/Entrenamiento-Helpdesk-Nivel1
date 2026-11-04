@@ -1,6 +1,5 @@
 {
   "name": "Entrenamiento Helpdesk Nivel 1 — Un Fantasma en el Sistema",
   "description": "Simulador educativo de soporte técnico Nivel 1 con usuarios frustrados para entrenar habilidades blandas (empatía, paciencia, claridad) y resolución técnica de incidencias de ofimática (correo electrónico, procesador de textos y presentaciones).",
-  "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "requestFramePermissions": []
 }

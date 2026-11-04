@@ -1,102 +1,121 @@
-<div align="center">
-  <a href="https://www.unfantasmaenelsistema.com/" target="_blank">
-    <img src="./public/assets/aistudio/icono_81a3db5b.png" alt="Logo Un Fantasma en el Sistema" width="120" />
-  </a>
+<p align="center">
+  <a href="https://www.unfantasmaenelsistema.com"><img src="public/assets/aistudio/icono_81a3db5b.png" width="110" alt="Un fantasma en el sistema"></a>
+</p>
 
-  # Entrenamiento Helpdesk (Nivel 1) — Simulador de Asistencia a Usuarios
+<h1 align="center">Entrenamiento Helpdesk Nivel 1</h1>
 
-  **Simulador interactivo de soporte técnico Nivel 1 con «Personalidad de Usuario Frustrado» para entrenar habilidades blandas (*Soft Skills*: empatía, paciencia, claridad pedagógica) y conocimientos técnicos de Ofimática (Correo Electrónico, Procesador de Textos y Presentaciones).**
+<p align="center">
+  <b>Simulador de soporte técnico ante usuarios frustrados: empatía, claridad y ofimática</b><br>
+  6 tickets reales de oficina · Correo, Word y presentaciones · Termómetro de frustración · Rúbrica fase a fase · Informe para el profesor
+</p>
 
-  🌐 **Proyecto educativo de [Un Fantasma en el Sistema](https://www.unfantasmaenelsistema.com/)**
-</div>
+<p align="center">
+  <a href="https://unfantasmaenelsistema.github.io/Entrenamiento-Helpdesk-Nivel1/"><b>▶ Abrir el simulador</b></a> ·
+  <a href="#qué-hace">Qué hace</a> ·
+  <a href="#los-6-tickets">Los 6 tickets</a> ·
+  <a href="#cómo-se-evalúa">Cómo se evalúa</a> ·
+  <a href="#desarrollo">Desarrollo</a> ·
+  <a href="https://www.unfantasmaenelsistema.com">unfantasmaenelsistema.com</a> ·
+  <a href="LICENSE">MIT</a>
+</p>
 
----
+<p align="center">
+  <img src="https://img.shields.io/badge/navegador-sin_servidor-10b981?style=flat-square" alt="Sin servidor">
+  <img src="https://img.shields.io/badge/datos-100%25_locales-0284c7?style=flat-square" alt="Datos 100 % locales">
+  <img src="https://img.shields.io/badge/tickets-6-f59e0b?style=flat-square" alt="6 tickets">
+  <img src="https://img.shields.io/badge/licencia-MIT-blue?style=flat-square" alt="MIT">
+</p>
 
-## 📋 Descripción del Proyecto
+<p align="center">
+  <img src="docs/capturas/01-simulador.webp" width="900" alt="Simulador con la cola de 6 incidencias, el ticket INC-1042 en la fase 2, el visor remoto del equipo de la usuaria con el campo CCO y el enlace en solo lectura, y la conversación con la evaluación de la primera respuesta">
+</p>
 
-En el trabajo real de un técnico de **Helpdesk / Service Desk de Nivel 1**, saber la respuesta técnica es solo la mitad del éxito: la otra mitad consiste en **contener la frustración del usuario**, escuchar sin ponerse a la defensiva, explicar cada paso con un lenguaje claro sin jerga innecesaria y educar para prevenir futuras incidencias.
+En un servicio de soporte de Nivel 1, saber la solución técnica es solo la mitad del trabajo: la otra mitad es atender a una persona que está nerviosa, no culparla, explicarle cada paso sin jerga y dejarle un consejo para que no vuelva a pasar. Este simulador pone al alumno al otro lado de seis incidencias reales de oficina con usuarios que llegan muy alterados, y evalúa a la vez el trato y la precisión técnica.
 
-Esta aplicación web adopta la **Personalidad de Usuario Frustrado** en 6 escenarios reales de oficina. El alumno actúa como técnico de soporte guiando al usuario a través de 3 fases progresivas (**1. Contención y Diagnóstico → 2. Resolución Guiada Paso a Paso → 3. Verificación y Prevención**) mientras observa en tiempo real el **Visor Remoto del Equipo del Usuario** y el **Termómetro de Frustración**.
+> [!NOTE]
+> Todo funciona en el navegador, sin servidor ni claves de API. Las respuestas, el nombre del alumno y los informes se guardan solo en el `localStorage` de ese navegador.
 
-Al finalizar cada ticket, el simulador genera un **Informe de Evaluación con Rúbrica Docente** que mide:
-1. **Paciencia y Empatía (Habilidades Blandas)** (`0% – 100%`)
-2. **Precisión Técnica en Ofimática (Hard Skills)** (`0% – 100%`)
-3. **Claridad Pedagógica y Comunicación Paso a Paso** (`0% – 100%`)
-4. **Índice de Desescalada Emocional** (evolución de la frustración turno a turno)
+## Qué hace
 
----
+- **Cola de 6 tickets** de correo electrónico, procesador de textos y presentaciones, cada uno en **3 fases**: contención y diagnóstico, resolución guiada y verificación con consejo preventivo.
+- **Visor remoto** del equipo del usuario, que cambia según lo que le has pedido hacer, y **termómetro de frustración** que sube o baja con cada respuesta.
+- **Redacción libre**: escribes tu respuesta como en un chat de soporte y se corrige al momento (conceptos técnicos de la fase, empatía, claridad).
+- **Opciones tácticas**: compara tres respuestas posibles por fase (empática y precisa, correcta pero fría, amable pero equivocada) y mira cómo reacciona el usuario.
+- **Pista** bajo demanda con los conceptos que se evalúan en la fase.
+- **Informe de evaluación** por ticket y global, con la auditoría fase a fase, descarga en Markdown, copia del resumen e impresión a PDF.
+- **Manual de ofimática** con la causa, la solución y los atajos de cada incidencia.
 
-## 🖼️ Capturas de Pantalla de la Aplicación
+<p align="center">
+  <img src="docs/capturas/02-opciones-tacticas.webp" width="900" alt="Opciones tácticas de la fase 2 del ticket de correo: respuesta empática y precisa, respuesta técnica con jerga y reproche, y respuesta amable pero con el error de usar CC en lugar de CCO">
+</p>
 
-### 1. Consola Principal de Simulación y Visor Remoto del Equipo del Usuario
-![Captura del Simulador Helpdesk Nivel 1](./public/docs/captura-simulador.svg)
+## Los 6 tickets
 
-### 2. Informe Final de Evaluación y Rúbrica Turno por Turno
-![Captura de Evaluación y Rúbrica](./public/docs/captura-evaluacion.svg)
+| Ticket | Área | Usuario | Incidencia | Lo que hay que saber |
+| :-- | :-- | :-- | :-- | :-- |
+| `INC-1042` | Correo | Carmen, directora financiera | No puede enviar un PDF de 45 MB a 40 clientes externos, y los tiene a todos en «Para». | Límite de adjuntos (20-25 MB), enlace en la nube en solo lectura, **CCO** (con copia oculta) por protección de datos, comprobar en *Elementos enviados*. |
+| `INC-1048` | Word | Roberto, jefe de compras | Se cerró el procesador de textos con un contrato de 35 páginas sin guardar. | No sobrescribir, *Archivo > Información > Administrar documento*, *Recuperar documentos no guardados*, **Ctrl + G**, Autoguardado (en OneDrive/SharePoint) y Autorrecuperación. |
+| `INC-1053` | Presentaciones | Elena, directora comercial | El proyector solo muestra el fondo de escritorio y teme que se vean sus notas. | **Windows + P** (*Duplicar* / *Extender*), **Vista Moderador**, **F5** y **Mayús + F5**, *Mostrar configuración > Intercambiar Vista Moderador y Presentación de diapositivas*. |
+| `INC-1059` | Correo | Julián, coordinador logístico | No le entran correos y hay tres camiones esperando albaranes. | *Trabajar sin conexión*, carpeta *Correo no deseado* y *No es correo no deseado*, filtro **Tiene datos adjuntos**, estado *Conectado*. |
+| `INC-1064` | Word | Lucía, secretaria de dirección | Al añadir dos líneas se descuadran 40 páginas y en la imprenta cambia la letra. | **Mostrar todo (¶)**, cambiar los Intro repetidos por **salto de página (Ctrl + Enter)**, exportar a **PDF** para conservar fuentes y diseño. |
+| `INC-1071` | Presentaciones | Marcos, formador | La pantalla se queda en negro a mitad de clase y el vídeo no suena por el proyector. | Tecla **N** o **punto** (pantalla en negro), salida de audio **HDMI** desde el icono del altavoz, **incrustar** el vídeo en lugar de vincularlo. |
 
-### 3. Base de Conocimiento de Ofimática y Protocolo HEARD
-![Captura del Manual de Ofimática](./public/docs/captura-manual.svg)
+<p align="center">
+  <img src="docs/capturas/03-informe.webp" width="900" alt="Informe de evaluación del ticket INC-1042: nota 93 sobre 100 con ayuda, 3 intervenciones, empatía, precisión, claridad y frustración final, y la auditoría fase a fase con la etiqueta de cada intervención">
+</p>
 
----
+## Cómo se evalúa
 
-## 🎯 Escenarios de Entrenamiento Incluidos (6 Tickets Nivel 1)
+- **Precisión técnica**: cada fase tiene dos o tres conceptos (por ejemplo, «CCO» y «solo lectura»). Para avanzar hay que mencionar al menos la mitad. El corrector busca **expresiones completas y específicas** («CCO», «Ctrl + Enter», «Mostrar todo»), no palabras sueltas: una respuesta amable pero genérica no hace avanzar en ninguna fase.
+- **Empatía**: suma por expresiones que validan al usuario («entiendo», «no se preocupe», «vamos a…») y resta mucho por reproches («es obvio», «debería haber guardado», «deje de quejarse») o por escribir en mayúsculas.
+- **Claridad**: pasos ordenados (primero, luego, 1., 2.…), referencias concretas a la interfaz (pestaña, botón, menú) y una extensión razonable.
+- **Nota del ticket**: 40 % empatía, 40 % técnica y 20 % claridad, con la media de **todas** las intervenciones, también las que no hicieron avanzar.
+- **Intervenciones con ayuda**: las opciones tácticas y las respuestas copiadas o retocadas de la respuesta modelo se marcan como «con ayuda» en el informe, y la nota del ticket lo indica.
 
-| Código | Categoría | Usuario Frustrado | Incidencia Simulada | Competencias Técnicas Evaluadas |
-| :--- | :--- | :--- | :--- | :--- |
-| **`INC-1042`** | **Correo Electrónico** | Carmen Vázquez *(Directora Financiera)* | Bloqueo al adjuntar PDF de 45 MB para 40 clientes externos a 10 min de cerrar auditoría. | Límite de 25 MB en correo, enlace en la nube en modo *Solo lectura*, uso obligatorio de **CCO (Copia Oculta)** por RGPD y verificación en *Elementos enviados*. |
-| **`INC-1048`** | **Procesador de Textos** | Roberto Méndez *(Jefe de Compras)* | Pérdida de contrato de 35 páginas tras cierre inesperado sin haber guardado. | Frenar sobrescritura del archivo antiguo, ruta `Archivo > Información > Administrar documento`, `Recuperar documentos no guardados (.asd)`, botón *Restaurar* y atajo **`Ctrl + G`**. |
-| **`INC-1053`** | **Presentaciones** | Elena Soriano *(Directora Comercial)* | El proyector de la sala de juntas solo muestra el fondo de escritorio vacío y teme que se vean sus notas privadas. | Atajo **`Windows + P`** (diferencia entre *Duplicar* y *Ampliar*), activar **Vista Moderador**, lanzar con **`F5`** / **`Mayús + F5`** e intercambiar monitores. |
-| **`INC-1059`** | **Correo Electrónico** | Julián Ortega *(Coordinador Logístico)* | No entran correos desde las 9:00 con tres camiones esperando albaranes en el muelle. | Desactivar modo **Trabajar sin conexión** en la barra de estado, rescatar mensajes de **Correo no deseado (Spam)** marcando remitente seguro y filtro *Tiene archivos adjuntos*. |
-| **`INC-1064`** | **Procesador de Textos** | Lucía Pardo *(Secretaria de Dirección)* | Al añadir dos líneas en la página 2 se descuadran las 40 páginas de la memoria anual y cambia la letra en la imprenta. | Mostrar marcas de formato (**`¶` / `Ctrl + Mayús + 8`**), sustituir `Enter` repetidos por **Salto de página (`Ctrl + Enter`)** y exportar a **PDF** con fuentes incrustadas. |
-| **`INC-1071`** | **Presentaciones** | Marcos Vidal *(Formador de Prevención)* | La pantalla se pone completamente negra a mitad de clase al rozar el teclado y el vídeo no suena por el proyector. | Cortinilla negra con la **tecla `N` o `.`**, conmutar salida de audio de Windows a **HDMI / Proyector** e **incrustar vídeo** dentro del `.pptx` en lugar de vincularlo. |
+> [!IMPORTANT]
+> Es un corrector por conceptos: no entiende el sentido de las frases (una negación como «no use CCO» también cuenta como mencionar CCO). Sirve para practicar y para que el profesor vea cómo responde cada alumno; la nota no sustituye a la revisión del profesor.
 
----
+<p align="center">
+  <img src="docs/capturas/04-manual.webp" width="900" alt="Manual de ofimática con las guías de correo, procesador de textos y presentaciones">
+</p>
 
-## 🛠️ Modos de Práctica para el Alumno
+## Desarrollo
 
-* **Modo Respuesta Libre (Redacción Propia):** El estudiante redacta su propia respuesta como en un chat real de soporte. El motor pedagógico analiza en tiempo real marcadores de empatía, ausencia de reproches, conectores de claridad paso a paso y presencia de los conceptos técnicos de ofimática requeridos en cada fase.
-* **Modo Laboratorio Guiado (Opciones Tácticas):** Permite comparar 3 enfoques de respuesta en cada turno (*Empática + Precisa*, *Técnica pero Fría/Cortante* y *Amable pero Técnicamente Errónea*), o cargar una plantilla en el editor para personalizarla antes de enviarla.
-* **Exportación de Evidencias para el Profesor:** Al terminar uno o varios tickets, el alumno puede exportar su **Informe Completo de Evaluación en Markdown (`.md`) o JSON**, o imprimirlo directamente en PDF.
-
----
-
-## 🚀 Instalación Local y Despliegue en GitHub Pages
-
-La aplicación está configurada con rutas relativas (`base: './'` en `vite.config.ts`) y funciona al **100% en alojamiento estático (GitHub Pages)** sin requerir servidores externos ni claves de API para ejecutar las simulaciones.
-
-### 1. Ejecución en entorno local
+Requisitos: Node.js 20 o superior.
 
 ```bash
-# Clonar el repositorio
-git clone https://github.com/TU_USUARIO/TU_REPOSITORIO.git
-cd TU_REPOSITORIO
-
-# Instalar dependencias
-npm install
-
-# Iniciar servidor de desarrollo (puerto 3000)
-npm run dev
+git clone https://github.com/unfantasmaenelsistema/Entrenamiento-Helpdesk-Nivel1.git
+cd Entrenamiento-Helpdesk-Nivel1
+npm ci
+npm run dev      # http://localhost:3000
+npm test         # 45 tests del corrector y de los escenarios
+npm run lint     # comprobación de tipos
+npm run build    # versión estática en dist/
 ```
 
-### 2. Compilar para producción
+Cada `push` a `main` pasa por el workflow [`deploy.yml`](.github/workflows/deploy.yml) (tipos, tests y build) y se publica en GitHub Pages. Los pull requests ejecutan las mismas comprobaciones sin publicar.
 
-```bash
-npm run build
+```text
+src/
+├── data/scenarios.ts             Los 6 tickets: fases, conceptos, respuestas modelo y opciones tácticas
+├── data/knowledgeBase.ts         Manual de ofimática
+├── utils/evaluationEngine.ts     Corrector (conceptos, empatía, claridad, ayuda, nota)
+├── utils/evaluationEngine.test.ts
+├── App.tsx                       Cola de tickets, conversación y modos de respuesta
+└── components/                   Visor remoto, informe y manual
 ```
-Esto generará la carpeta estática `dist/` lista para alojar en cualquier servidor o en GitHub Pages.
 
-### 3. Despliegue automático en GitHub Pages (Recomendado)
+Para añadir un ticket basta con un objeto más en `scenarios.ts`. Los tests comprueban que la respuesta modelo de cada fase cubre todos sus conceptos y que una respuesta genérica no avanza.
 
-El proyecto ya incluye el flujo de trabajo oficial en `.github/workflows/deploy.yml`:
+## Novedades de la versión 2
 
-1. Sube este código a un repositorio de GitHub en la rama `main`.
-2. En tu repositorio de GitHub, entra en **Settings → Pages**.
-3. En la sección **Build and deployment → Source**, selecciona **GitHub Actions**.
-4. Al hacer cualquier `git push` a `main` (o lanzándolo manualmente desde la pestaña **Actions**), GitHub compilará y publicará automáticamente la aplicación en `https://TU_USUARIO.github.io/TU_REPOSITORIO/`.
+- **La nota contaba solo los aciertos**: las respuestas que no hacían avanzar desaparecían del informe. Ahora cuentan todas, y el informe muestra cuántas no avanzaron.
+- **El corrector buscaba trozos de palabra**: «mb» aprobaba con «también» o «nombre», y conceptos como «para», «ver» o «pestaña» se cumplían con casi cualquier frase. Ahora busca expresiones completas y específicas.
+- **Pegar la respuesta modelo daba la nota máxima**: ahora esas intervenciones y las opciones tácticas cuentan como «con ayuda».
+- El usuario respondía «frío» con una frustración que bajaba como si hubiera sido cálido (había dos umbrales distintos). Ahora hay uno solo.
+- Terminología de Windows y Office en español: *Extender* (no «Ampliar») en Windows + P, *Con copia oculta* (no «Copia de Carbón Oculta»), *Tiene datos adjuntos* y `hasattachments:yes` en Outlook, *Mostrar configuración > Intercambiar Vista Moderador y Presentación de diapositivas* en PowerPoint, y Autoguardado aclarando que solo funciona con OneDrive o SharePoint.
+- Fuera los restos de AI Studio (sección «Guía GitHub Pages», dependencias de Gemini y Express) y las capturas dibujadas en SVG; se arregla la instalación con npm, la pista empieza oculta, las fechas del informe incluyen el día y el diseño ya no se desborda en el móvil.
 
----
+## Créditos y licencia
 
-## 👨‍🏫 Autoría y Créditos
-
-Desarrollado para **[Un Fantasma en el Sistema](https://www.unfantasmaenelsistema.com/)**.  
-Recurso educativo abierto para Formación Profesional (Sistemas Microinformáticos y Redes — SMR, Administración de Sistemas y módulos de Ofimática y Atención al Usuario).
+Desarrollado para **[Un Fantasma en el Sistema](https://www.unfantasmaenelsistema.com)**. Recurso educativo abierto para Formación Profesional (Sistemas Microinformáticos y Redes, módulos de ofimática y atención al usuario). Distribuido bajo licencia [MIT](LICENSE).
