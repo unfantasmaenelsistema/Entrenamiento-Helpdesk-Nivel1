@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620">
+  <rect width="1200" height="620" fill="#F8FAFC"/>
+  <rect x="32" y="28" width="1136" height="564" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="64" y="72" font-family="Plus Jakarta Sans, sans-serif" font-size="22" font-weight="700" fill="#0F172A">Informe de Evaluación de Competencias · Helpdesk Nivel 1</text>
+  <text x="64" y="96" font-family="IBM Plex Mono, monospace" font-size="13" fill="#475569">Ticket INC-1048 · Recuperación de Documento de Procesador de Textos · Calificación: SOBRESALIENTE (97/100)</text>
+
+  <!-- 4 Metric Boxes -->
+  <rect x="64" y="122" width="250" height="104" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="84" y="150" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#64748B">Paciencia y Empatía (Soft Skills)</text>
+  <text x="84" y="192" font-family="IBM Plex Mono, monospace" font-size="32" font-weight="700" fill="#059669">97%</text>
+  <text x="84" y="212" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#059669">● Contención emocional excelente</text>
+
+  <rect x="338" y="122" width="250" height="104" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="358" y="150" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#64748B">Precisión Técnica (Ofimática)</text>
+  <text x="358" y="192" font-family="IBM Plex Mono, monospace" font-size="32" font-weight="700" fill="#0284C7">99%</text>
+  <text x="358" y="212" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#0284C7">● Ruta .asd y Ctrl+G exactos</text>
+
+  <rect x="612" y="122" width="250" height="104" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="632" y="150" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#64748B">Claridad Pedagógica</text>
+  <text x="632" y="192" font-family="IBM Plex Mono, monospace" font-size="32" font-weight="700" fill="#0F172A">96%</text>
+  <text x="632" y="212" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#475569">● Instrucciones paso a paso sin jerga</text>
+
+  <rect x="886" y="122" width="250" height="104" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="906" y="150" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#64748B">Desescalada de Frustración</text>
+  <text x="906" y="192" font-family="IBM Plex Mono, monospace" font-size="32" font-weight="700" fill="#059669">90% → 5%</text>
+  <text x="906" y="212" font-family="Plus Jakarta Sans, sans-serif" font-size="11" fill="#059669">● Usuario tranquilo y agradecido</text>
+
+  <!-- Turn by Turn Breakdown -->
+  <text x="64" y="266" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#0F172A">Desglose Pedagógico Turno por Turno</text>
+
+  <rect x="64" y="284" width="1072" height="128" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="84" y="310" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#0284C7">FASE 1 · Contención del Pánico y Prevención de Sobrescritura · Empatía: 98% · Técnica: 98%</text>
+  <text x="84" y="336" font-family="Plus Jakarta Sans, sans-serif" font-size="13" fill="#0F172A">Conceptos validados: Existencia de Autorrecuperación (.asd) · No pulsar Guardar sobre el archivo antiguo</text>
+  <text x="84" y="362" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#059669">Feedback Docente: «Reduces el pánico dándole una razón técnica real y evitas que pise el archivo temporal.»</text>
+  <text x="84" y="388" font-family="IBM Plex Mono, monospace" font-size="11" fill="#64748B">Evolución de frustración en este turno: 90% → 55% (-35 puntos)</text>
+
+  <rect x="64" y="428" width="1072" height="128" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="84" y="454" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#0284C7">FASE 2 · Ruta Archivo → Información → Administrar Documento · Empatía: 96% · Técnica: 100%</text>
+  <text x="84" y="480" font-family="Plus Jakarta Sans, sans-serif" font-size="13" fill="#0F172A">Conceptos validados: Menú Archivo / Información · Recuperar documentos no guardados</text>
+  <text x="84" y="506" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#059669">Feedback Docente: «Guía impecable con las dos rutas de recuperación en ofimática y lenguaje claro.»</text>
+  <text x="84" y="532" font-family="IBM Plex Mono, monospace" font-size="11" fill="#64748B">Evolución de frustración en este turno: 55% → 15% (-40 puntos)</text>
+</svg>

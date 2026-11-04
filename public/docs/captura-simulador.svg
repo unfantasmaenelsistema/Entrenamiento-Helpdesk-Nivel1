@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <rect width="1200" height="675" fill="#F8FAFC"/>
+  <!-- Top Bar -->
+  <rect width="1200" height="64" fill="#FFFFFF"/>
+  <line x1="0" y1="64" x2="1200" y2="64" stroke="#E2E8F0" stroke-width="1"/>
+  <circle cx="44" cy="32" r="16" fill="#0F172A"/>
+  <text x="72" y="38" font-family="Plus Jakarta Sans, sans-serif" font-size="18" font-weight="700" fill="#0F172A">Un Fantasma en el Sistema · Helpdesk Nivel 1</text>
+  <text x="520" y="37" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="600" fill="#0284C7">Simulador de Tickets</text>
+  <text x="680" y="37" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="500" fill="#475569">Manual de Ofimática</text>
+  <text x="840" y="37" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="500" fill="#475569">Evaluación y Rúbrica</text>
+  <rect x="1020" y="16" width="150" height="32" rx="6" fill="#0F172A"/>
+  <text x="1044" y="37" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF">unfantasmaenelsistema</text>
+
+  <!-- Left Ticket Queue Sidebar -->
+  <rect x="24" y="88" width="320" height="560" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="44" y="122" font-family="Plus Jakarta Sans, sans-serif" font-size="15" font-weight="700" fill="#0F172A">Cola de Incidencias Nivel 1</text>
+  <text x="44" y="142" font-family="IBM Plex Mono, monospace" font-size="11" fill="#64748B">6 escenarios · Correo · Textos · Proyección</text>
+
+  <!-- Active Ticket Card -->
+  <rect x="40" y="162" width="288" height="96" rx="8" fill="#F0F9FF" stroke="#0284C7" stroke-width="1.5"/>
+  <text x="54" y="184" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="#0284C7">INC-1042 · Correo Electrónico · Básico</text>
+  <text x="54" y="206" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="700" fill="#0F172A">Envío a 40 clientes (45 MB) y CCO</text>
+  <text x="54" y="226" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#334155">Usuaria: Carmen Vázquez (Finanzas)</text>
+  <text x="54" y="246" font-family="IBM Plex Mono, monospace" font-size="11" fill="#DC2626">▲ Frustración inicial: 85%</text>
+
+  <!-- Second Ticket Card -->
+  <rect x="40" y="270" width="288" height="90" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="54" y="292" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="#475569">INC-1048 · Procesador de Textos</text>
+  <text x="54" y="314" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="600" fill="#0F172A">Pérdida de contrato de 35 páginas</text>
+  <text x="54" y="334" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#64748B">Usuario: Roberto Méndez (Compras)</text>
+
+  <!-- Third Ticket Card -->
+  <rect x="40" y="372" width="288" height="90" rx="8" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="54" y="394" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="#475569">INC-1053 · Presentaciones</text>
+  <text x="54" y="416" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="600" fill="#0F172A">Proyector sin imagen y Vista Moderador</text>
+  <text x="54" y="436" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#64748B">Usuaria: Elena Soriano (Ventas)</text>
+
+  <!-- Center & Right Main Simulation Stage -->
+  <rect x="364" y="88" width="812" height="560" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="388" y="122" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#0F172A">INC-1042 · Carmen Vázquez (Directora Financiera)</text>
+  <text x="388" y="142" font-family="IBM Plex Mono, monospace" font-size="12" fill="#D97706">Estado Emocional: Alterada (Frustración: 55% ↓) · Fase 2 de 3</text>
+
+  <!-- Remote Desktop Box -->
+  <rect x="388" y="158" width="764" height="120" rx="8" fill="#0F172A"/>
+  <text x="406" y="182" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#38BDF8">VISOR REMOTO DEL EQUIPO DEL USUARIO · FASE 2/3</text>
+  <rect x="404" y="194" width="732" height="70" rx="6" fill="#1E293B"/>
+  <text x="420" y="218" font-family="IBM Plex Mono, monospace" font-size="12" fill="#F8FAFC">Para: carmen.vazquez@empresa.es  |  CCO: [40 clientes ocultos RGPD OK]</text>
+  <text x="420" y="244" font-family="IBM Plex Mono, monospace" font-size="12" fill="#34D399">Adjunto Nube: Dossier_Auditoria_2026.pdf (45,2 MB) · Permiso: Solo lectura</text>
+
+  <!-- Chat Transcript Box -->
+  <rect x="388" y="292" width="764" height="210" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <!-- User Bubble -->
+  <rect x="406" y="308" width="560" height="68" rx="8" fill="#FEF2F2" stroke="#FECACA"/>
+  <text x="422" y="328" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700" fill="#991B1B">Carmen Vázquez (Usuaria Frustrada):</text>
+  <text x="422" y="348" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#7F1D1D">«¡¡Vuestro correo no funciona!! Intento mandar el PDF de 45 MB a 40 clientes y</text>
+  <text x="422" y="364" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#7F1D1D">me sale una ventana roja de límite superado. ¡Me quedan 10 minutos!»</text>
+
+  <!-- Student Bubble -->
+  <rect x="540" y="390" width="594" height="94" rx="8" fill="#F0F9FF" stroke="#BAE6FD"/>
+  <text x="556" y="410" font-family="Plus Jakarta Sans, sans-serif" font-size="12" font-weight="700" fill="#075985">Alumno Técnico Helpdesk N1 (Empatía: 96% · Precisión: 98%):</text>
+  <text x="556" y="430" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#0C4A6E">«Buenos días, Carmen. Entiendo la urgencia con la auditoría, tranquila que</text>
+  <text x="556" y="448" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#0C4A6E">sale a tiempo. El correo limita adjuntos directos a 25 MB. Subámoslo a OneDrive</text>
+  <text x="556" y="466" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#0C4A6E">en modo Solo lectura y pongamos a los 40 clientes en CCO para proteger sus datos.»</text>
+
+  <!-- Response Composer -->
+  <rect x="388" y="518" width="590" height="108" rx="8" fill="#FFFFFF" stroke="#CBD5E1"/>
+  <text x="406" y="544" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#64748B">Escribe tu respuesta empática y guía paso a paso al usuario...</text>
+  <rect x="994" y="518" width="158" height="108" rx="8" fill="#0284C7"/>
+  <text x="1024" y="576" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">Enviar Respuesta</text>
+</svg>

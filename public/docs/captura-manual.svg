@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" width="1200" height="540">
+  <rect width="1200" height="540" fill="#F8FAFC"/>
+  <rect x="32" y="28" width="1136" height="484" rx="12" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="64" y="72" font-family="Plus Jakarta Sans, sans-serif" font-size="22" font-weight="700" fill="#0F172A">Base de Conocimiento · Manual de Ofimática y Protocolo HEARD</text>
+  <text x="64" y="96" font-family="Plus Jakarta Sans, sans-serif" font-size="13" fill="#475569">Guías técnicas de consulta rápida para el técnico de soporte Nivel 1 durante la atención al usuario</text>
+
+  <!-- Card 1 -->
+  <rect x="64" y="124" width="520" height="352" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="88" y="154" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="#0284C7">PRESENTACIONES Y PROYECCIÓN · SALAS DE JUNTAS</text>
+  <text x="88" y="182" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#0F172A">Proyección Dual (Win + P) y Vista Moderador</text>
+  <text x="88" y="212" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#334155">1. Verificar que el proyector recibe señal HDMI (fondo extendido).</text>
+  <text x="88" y="236" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#334155">2. Pulsar Windows + P y mantener el modo «Ampliar».</text>
+  <text x="88" y="260" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#334155">3. Marcar «Usar vista Moderador» en Presentación con diapositivas.</text>
+  <text x="88" y="284" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#334155">4. Pulsar F5 (inicio) o Mayús + F5 (diapositiva actual).</text>
+  <rect x="88" y="312" width="472" height="136" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="104" y="338" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#0F172A">Atajos Críticos de Teclado:</text>
+  <text x="104" y="366" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0284C7">Windows + P   → Abrir menú de proyección de pantallas</text>
+  <text x="104" y="392" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0284C7">F5 / Mayús+F5 → Iniciar desde el principio / actual</text>
+  <text x="104" y="418" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0284C7">Tecla N o .   → Pausar o restaurar pantalla en negro</text>
+
+  <!-- Card 2 -->
+  <rect x="616" y="124" width="520" height="352" rx="8" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="640" y="154" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="600" fill="#059669">HABILIDADES BLANDAS · PROTOCOLO DE DESESCALADA</text>
+  <text x="640" y="182" font-family="Plus Jakarta Sans, sans-serif" font-size="16" font-weight="700" fill="#0F172A">Método HEARD ante Usuarios Frustrados</text>
+  <text x="640" y="212" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#334155">• Hear (Escuchar): Dejar que exprese su urgencia sin discutir.</text>
+  <text x="640" y="236" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#334155">• Empathize (Empatizar): Validar la emoción («Entiendo la prisa»).</text>
+  <text x="640" y="260" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#334155">• Assure (Asegurar): Dar calma («Lo resolvemos juntos paso a paso»).</text>
+  <text x="640" y="284" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#334155">• Resolve (Resolver): Instrucciones visuales sin tecnicismos.</text>
+  <rect x="640" y="312" width="472" height="136" rx="6" fill="#FFFFFF" stroke="#E2E8F0"/>
+  <text x="656" y="338" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#0F172A">Contraste de Comunicación en Soporte:</text>
+  <text x="656" y="366" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#DC2626">✗ Evitar: «Cálmese», «Es culpa suya», «Es muy fácil»</text>
+  <text x="656" y="396" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#059669">✓ Usar: «Entiendo la urgencia», «¡Qué bien que me pregunta!»</text>
+  <text x="656" y="424" font-family="Plus Jakarta Sans, sans-serif" font-size="12" fill="#475569">Web oficial: https://www.unfantasmaenelsistema.com/</text>
+</svg>
